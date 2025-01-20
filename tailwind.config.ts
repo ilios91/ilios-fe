@@ -9,11 +9,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         "blue": {
           "light": "#e6effd",
           "light-hover": "#d9e7fb",
@@ -21,9 +19,15 @@ export default {
           "normal" :"#005ce6",
           "normal-hover" :"#0053cf",
           "normal-active" :"#004ab8",
-          "dark" :"##0045ad",
+          "dark" :"#0045ad",
+          "dark-hover" :"#00378a",
+          "dark-active" :"#002967",
+          "darker" :"#002051",
         }
       },
+      borderRadius: {
+        custom: "8px 16px 8px 16px"
+      }
     },
   },
   plugins: [],

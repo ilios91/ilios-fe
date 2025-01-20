@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <header>
+    <header className=" text-blue-dark">
       Navbar
     </header>
   );
