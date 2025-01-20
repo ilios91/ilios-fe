@@ -8,9 +8,21 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "blue": {
+          "light": "#e6effd",
+          "light-hover": "#d9e7fb",
+          "light-active": "#b0ccf7",
+          "normal" :"#005ce6",
+          "normal-hover" :"#0053cf",
+          "normal-active" :"#004ab8",
+          "dark" :"##0045ad",
+        }
       },
     },
   },
