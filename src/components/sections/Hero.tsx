@@ -19,7 +19,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div>
+            <div className="mt-20">
               <button className="w-[304px] h-16 rounded-lg bg-blue-normal text-white "> Get Started</button>
             </div>
           </div>
