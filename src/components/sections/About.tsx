@@ -1,12 +1,18 @@
 import Image from "next/image";
-import AboutUsImage from "@/assets/images/about.svg";
+import AboutImage from "@/assets/images/about.svg";
 
 export default function About() {
   return (
-    <section id="about" className="h-[640p] w-[90%] mx-auto">
-      <div className="flex items-center w-full gap-x-10 mt-24 mb-20">
-        <div className="w-[629px] h-[451px]">
-          <Image src={AboutUsImage} alt="about-us-image" className="w-full" />
+    <section id="about" className="h-[640p] w-[90%] mx-auto relative">
+      <div className="flex items-center w-full gap-x-10 mt-24 mb-8">
+        <div className="flex-1 max-w-[604px] max-h-[627.47px]">
+          <Image 
+            src={AboutImage} 
+            alt="about-image" 
+            // fill
+            priority
+            objectFit="cover"
+          />
         </div>
         <div className="w-[584px]">
           <h2 className="text-[36px] font-bold text-main-black leading-8">
