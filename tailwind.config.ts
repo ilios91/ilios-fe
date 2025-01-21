@@ -12,6 +12,7 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
+        main: {},
         "blue": {
           "light": "#e6effd",
           "light-hover": "#d9e7fb",
@@ -26,7 +27,7 @@ export default {
         }
       },
       borderRadius: {
-        custom: "8px 16px 8px 16px"
+        custom: "8px"
       }
     },
   },
