@@ -1,10 +1,10 @@
 import Image from "next/image";
 import HeroImage from "@/assets/images/hero.svg";
-import styles from "@/components/styles/hero.module.scss";
+// import styles from "@/components/styles/hero.module.scss";
 
 export default function Hero() {
   return (
-    <section className={`${styles.hero} bg-red-700 h-[866px] relative top-[90px] max-w-screen`}>
+    <section className={`h-[866px] relative top-[90px]`}>
       <div className="h-full w-full">
         <Image
           fill={true}
