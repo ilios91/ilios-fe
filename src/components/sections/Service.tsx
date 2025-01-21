@@ -4,28 +4,44 @@ import serviceImage2 from "@/assets/images/service-image-2.svg";
 
 export default function Service() {
   return (
-    <div id="service" className="relative">
+    <div id="service" className="relative mt-5">
       <h2 className="text-4xl font-bold text-center leading-[43px] text-main-black mt-9">
         Our Services
       </h2>
-      <div className="h-[665px] bg-red-500 max-w-[100vw] relative">
+      <div className="h-[665px] max-w-[100vw] relative mt-7">
+        {/* Opacity */}
+        <div className="absolute left-0 top-0 w-full h-full z-10">
+          <div className="max-w-[626px] bg-[#000000] opacity-60 h-full"></div>
+        </div>
+
+        {/* Text content */}
+        <div className="absolute left-0 top-0 w-full h-full z-40">
+          <div className="w-[90%] flex mx-auto bg-yellow-500 z-50 mt-[79px]">
+            <div>
+              <h2 className="text-[32px] leading-[39.01px] font-bold text-white">For Suppliers</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        {/* Image */}
         <Image
           src={serviceImage1}
           alt="service image"
           fill
           priority
-          className="object-cover"
+          objectFit="cover"
           sizes="100vw"
           quality={100}
         />
       </div>
-      <div className="h-[665px] bg-red-500 max-w-[100vw] relative">
+      <div className="h-[665px] max-w-[100vw] relative">
         <Image
           src={serviceImage2}
           alt="service image"
           fill
           priority
-          className="object-cover"
+          objectFit="cover"
           sizes="100vw"
           quality={100}
         />
