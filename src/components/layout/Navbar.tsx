@@ -29,7 +29,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div>
-          <button>Get Started</button>
+          <button className="w-44 h-16 rounded-lg bg-blue-normal font-bold text-[18px] text-white leading-7">Get Started</button>
         </div>
       </div>
     </nav>
