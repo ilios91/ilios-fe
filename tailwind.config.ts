@@ -12,7 +12,9 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
-        main: {},
+        "main": {
+          "black": "#171717"
+        },
         "blue": {
           "light": "#e6effd",
           "light-hover": "#d9e7fb",
