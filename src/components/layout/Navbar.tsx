@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} h-[90px] bg-white w-full fixed top-0 z-1`}>
+    <nav className={`${styles.navbar} h-[90px] bg-white w-full fixed top-0 z-50`}>
       <div className="w-[90%] mx-auto flex justify-between items-center h-full">
         <div>
           <Link href="/" className="flex items-center justify-center relative w-[72px] h-[78px]">
