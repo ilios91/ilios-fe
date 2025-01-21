@@ -14,11 +14,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} h-[122px] bg-white w-full fixed top-0 z-50`}>
+    <nav className={`${styles.navbar} h-[90px] bg-white w-full fixed top-0 z-1`}>
       <div className="w-[90%] mx-auto flex justify-between items-center h-full">
         <div>
-          <Link href="/" className="flex items-center justify-center relative w-24 h-24">
-            <Image fill={true} src={Logo} alt="Ilios" className="h-[40px] w-[40px] mx-auto"/>
+          <Link href="/" className="flex items-center justify-center relative w-[72px] h-[78px]">
+            <Image fill={true} src={Logo} alt="Ilios" />
           </Link>
         </div>
         <div className="flex items-center">
