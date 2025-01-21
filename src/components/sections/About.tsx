@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="h-[640p] w-[90%] mx-auto">
       <div className="flex items-center w-full gap-x-10 mt-24 mb-20">
-        <div className="w-[629px] h-[451p]">
+        <div className="w-[629px] h-[451px]">
           <Image src={AboutUsImage} alt="about-us-image" className="w-full" />
         </div>
         <div className="w-[584px]">
