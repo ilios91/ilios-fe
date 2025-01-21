@@ -17,14 +17,8 @@ export default function Navbar() {
     <nav className={`${styles.navbar} h-[122px] bg-white w-full`}>
       <div className="w-[90%] mx-auto flex justify-between items-center h-full">
         <div>
-          <Link href="/" className="block">
-            <Image
-              width={75}
-              height={75}
-              src={Logo}
-              alt="Ilios"
-              className="h-[40px] w-[40px] mx-auto"
-            />
+          <Link href="/" className="flex items-center justify-center relative w-24 h-24">
+            <Image fill={true} src={Logo} alt="Ilios" className="h-[40px] w-[40px] mx-auto"/>
           </Link>
         </div>
         <div className="flex items-center">
