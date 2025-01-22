@@ -1,5 +1,3 @@
-import logo from "@/assets/logo_.svg";
-
 export default function Footer() {
   return (
     <footer className="relative  bg-blue-normal text-white flex w-full flex-col">

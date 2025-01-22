@@ -4,29 +4,36 @@ import HeroImage from "@/assets/images/hero.svg";
 
 export default function Hero() {
   return (
-    <section className={`h-[866px] relative top-[90px]`}>
-      <div className="h-full w-full">
-        <Image
-          fill={true}
-          src={HeroImage}
-          alt="hero"
-          objectFit="cover"
-          priority
-          quality={100}
-        />
-      </div>
+    <section className={`relative w-full top-[90px] h-[calc(100vh-90px)]`}>
+      <Image
+        fill={true}
+        src={HeroImage}
+        alt="hero"
+        objectFit="cover"
+        priority
+      />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
 
-      <div className="absolute inset-0 max-w-[1192px] mx-auto flex flex-col justify-center items-center text-center">
+      <div className="text-white absolute inset-0 max-w-[1192px] mx-auto flex flex-col justify-center items-center text-center">
         {/* ... content ... */}
-        <h1 className="font-bold text-5xl align-center leading-[58px] text-white">Simplifying Healthcare Procurement for Facilities and Suppliers</h1>
-        <p className="font-normal text-white text-[18px] mt-6 max-w-[1022px]">To be proactive in providing a stable framework for the economic development of Nigeria, through effective, efficient, and transparent implementation of monetary and exchange rate policy, and management of the financial sector</p>
+        <h1 className="font-bold align-center max-xs:leading-[40px] w-[90%] text-2xl sm:text-4xl md:w-full md:text-5xl md:leading-[58px]">
+          Simplifying Healthcare Procurement for Facilities and Suppliers
+        </h1>
+        <p className="font-normal text-[18px] mt-6 max-w-[1022px]">
+          To be proactive in providing a stable framework for the economic
+          development of Nigeria, through effective, efficient, and transparent
+          implementation of monetary and exchange rate policy, and management of
+          the financial sector
+        </p>
         <div className="mt-24">
-          <button className="w-[274px] h-16 text-blue-normal bg-white font-bold text-[20px] leading-6 rounded-lg"> Get started</button>
+          <button className="w-[274px] h-16 text-blue-normal bg-white font-bold text-[20px] leading-6 rounded-lg">
+            {" "}
+            Get started
+          </button>
         </div>
       </div>
     </section>
