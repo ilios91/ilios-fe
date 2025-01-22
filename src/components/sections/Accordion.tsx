@@ -16,7 +16,7 @@ export default function Accordion({ text }: AccordionProps) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <rect width="20" height="20" />
-            <g clip-path="url(#clip0_1_3)">
+            <g clipPath="url(#clip0_1_3)">
               <rect
                 width="1440"
                 height="4206"

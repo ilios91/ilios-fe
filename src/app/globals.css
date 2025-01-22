@@ -4,25 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 *{
-  /* box-sizing: border-box; */
-  /* padding: 0; */
-  /* margin: 0; */
-  font-family: 'Montserrat', 'sans-serif';
-  background-color: "red" !important;
-  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', 'sans-serif';  
 }
-
-/* Hide the number input's spin buttons */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0; /* Optional: You can also remove the margin to ensure it's centered */
-}
-

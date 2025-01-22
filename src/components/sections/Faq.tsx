@@ -2,7 +2,7 @@ import Accordion from "./Accordion";
 
 export default function Faq() {
   return (
-    <section className="relative w-full h-[502px] bg-[#EDF4FF">
+    <section className="relative w-full h-[502px] bg-[#EDF4FF]">
       <div className="w-[90%] mx-auto flex items-center h-full justify-between">
         <div>
           <h6 className="font-medium text-2xl leading-[29.69px] text-main-black">
