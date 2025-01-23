@@ -46,8 +46,8 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
               </svg>
             ) : (
-              <svg className="size-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+              <svg className="size-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"/>
               </svg>
             )}
           </button>
@@ -56,7 +56,7 @@ export default function Navbar() {
          {/* Links - Mobile Slide-in Menu */}
         <nav 
           className={
-            `mt-[90px] fixed top-0 left-0 w-[70%] h-full bg-white transform transition-transform duration-300 ease-in-out 
+            `mt-[90px] fixed top-0 left-0 w-[70%] h-full bg-white transform transition-transform duration-1000 ease-in-out 
               md:-mt-[90px] md:static md:w-auto md:h-auto md:block ${
               isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`
             }
@@ -66,7 +66,7 @@ export default function Navbar() {
               { links.map((link) => (
                 <li 
                   key={link.id} 
-                  className="cursor-pointer text-main-black font-bold text-base" 
+                  className="cursor-pointer text-main-black font-bold text-sm md:text-base" 
                   onClick={() => scrollToSection(link.id)}
                   >{link.label}
                 </li>
@@ -75,7 +75,7 @@ export default function Navbar() {
 
             {/* Mobile Get started menu */}
             <div className="mt-6 md:hidden">
-              <button className="w-44 h-16 rounded-lg bg-blue-normal font-bold text-[18px] text-white leading-7"> Get Started </button>
+              <button className=" text-white w-36 h-12 rounded-md bg-blue-normal font-bold text-sm md:text-[18px]  md:w-44 md:h-16 md:rounded-lg  leading-7"> Get Started </button>
             </div>
           </div>
         </nav>
