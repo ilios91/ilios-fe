@@ -13,12 +13,12 @@ export default {
         xs: "320px", // Small phones (320px and up)
         sm: "576px", // Large phones (576px and up)
         md: "768px", // Tablets (768px and up)
+        tablet: "992px", // Tablets (992px and up)
         lg: "1280px", // Laptops (1280px and up)
         xl: "1440px", // Desktops (1440px and up)
 
         // Max-width breakpoints
         "max-xs": { max: "480px" }, // Smaller than 480px
-        "max-md": { max: "992px" }, // Smaller than 992px
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

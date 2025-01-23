@@ -4,7 +4,7 @@ import HeroImage from "@/assets/images/hero.svg";
 
 export default function Hero() {
   return (
-    <section className={`relative w-[100vw] h-[calc(100vh-90px)] top-[90px] sm:top-[90px]`}>
+    <section className={`relative w-[100vw h-[calc(100vh-90px)] top-[90px] overflow-hidden`}>
       <Image
         fill={true}
         src={HeroImage}
@@ -15,7 +15,7 @@ export default function Hero() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/50"/>
 
       {/* Content */}
 
