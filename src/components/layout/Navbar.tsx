@@ -28,8 +28,8 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`h-[90px] w-[100vw] md:w-full  fixed top-0 z-50`}>
-      <div className="w-[90%] mx-auto flex flex-wrap justify-between items-center h-full">
+    <header className={`h-[90px] w-[100vw] md:w-full fixed top-0 z-50 bg-white`}>
+      <div className="relative w-[90%] mx-auto flex justify-between items-center h-full">
 
         {/* Logo */}
         <div>
@@ -54,9 +54,15 @@ export default function Navbar() {
         </div>
 
          {/* Links - Mobile Slide-in Menu */}
-        <nav className={`fixed top-0 left-0 w-[70%] h-full bg-white  transform transition-transform duration-300 ease-in-out md:static md:w-auto md:h-auto md:block ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
-          <div>
-            <ul className="flex flex-col items-center justify-center gap-x-12 md:flex-row">
+        <nav 
+          className={
+            `mt-[90px] fixed top-0 left-0 w-[70%] h-full bg-white transform transition-transform duration-300 ease-in-out 
+              md:-mt-[90px] md:static md:w-auto md:h-auto md:block ${
+              isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`
+            }
+          >
+          <div className="flex flex-col md:flex-row items-start md:items-center h-full pl-8 md:mt-[90px] pt-4 md:pt-0 md:pl-0">
+            <ul className="flex flex-col gap-y-6 md:flex-row md:gap-y-0 md:gap-x-12">
               { links.map((link) => (
                 <li 
                   key={link.id} 
