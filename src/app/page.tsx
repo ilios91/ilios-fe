@@ -6,10 +6,10 @@ import Service from "@/components/sections/Service";
 export default function Home() {
   return (
     <main>
-      <Hero/>
-      <About/>
-      <Service/>
-      <Faq/>
+      {/* <Hero/> */}
+      {/* <About/> */}
+      {/* <Service/> */}
+      {/* <Faq/> */}
     </main>
   );
 }

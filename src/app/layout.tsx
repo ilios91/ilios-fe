@@ -14,7 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <Navbar/>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
