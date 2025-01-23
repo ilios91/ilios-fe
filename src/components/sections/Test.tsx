@@ -57,17 +57,22 @@ export default function Service() {
         <div className="absolute left-0 top-0 w-full h-full z-40">
           <div className="w-[90%] flex mx-auto mt-[79px]">
             <div>
-            <h2 className="text-[32px] leading-[39.01px] font-bold text-white">For Buyers</h2>
-              <p className="font-normal w-[358px] md:w-[421px] text-2xl leading-7 text-white mt-7">
+              <h2 className="text-[32px] leading-[39.01px] font-bold text-white">
+                For Buyers
+              </h2>
+              <p className="font-normal w-[421px] text-2xl leading-7 text-white mt-7">
                 Streamline Your Procurement :-Access verified suppliers and
                 high-quality products at competitive prices. Simplify
                 procurement processes, manage orders, and ensure on-time
                 delivery for your healthcare needs
               </p>
-              <button className="font-bold leading-[24.38px] text-[20px] w-[304px] h-16 rounded-lg bg-white text-blue-normal mt-[52px]"> Sign up as a Buyer </button>
+              <button className="font-bold leading-[24.38px] text-[20px] w-[304px] h-16 rounded-lg bg-white text-blue-normal mt-[52px]">
+                Sign up as a Buyer
+              </button>
             </div>
           </div>
         </div>
+
 
         <Image
           src={serviceImage2}
