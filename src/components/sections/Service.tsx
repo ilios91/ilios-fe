@@ -5,9 +5,9 @@ import serviceImage2 from "@/assets/images/service-image-2.svg";
 export default function Service() {
   return (
     <div id="service" className="relative mt-5">
-      <h2 className="text-4xl font-bold text-center leading-[43px] text-main-black mt-9">
-        Our Services
-      </h2>
+      <h2 className="text-4xl font-bold text-center leading-[43px] text-main-black mt-9">Our Services</h2>
+      
+      {/* Image 1 */}
       <div className="h-[665px] max-w-[100vw] relative mt-7">
         {/* Opacity */}
         <div className="absolute left-0 top-0 w-full h-full z-10">
@@ -45,6 +45,8 @@ export default function Service() {
           quality={100}
         />
       </div>
+
+      {/* Image */}
       <div className="h-[665px] max-w-[100vw] relative">
         {/* Opacity */}
         <div className="absolute left-0 top-0 w-full h-full z-10">
