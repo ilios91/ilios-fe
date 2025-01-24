@@ -5,7 +5,7 @@ import serviceImage2 from "@/assets/images/service-image-2.svg";
 export default function Service() {
   return (
     <div id="service" className="relative mt-5">
-      <h2 className="text-4xl font-bold text-center leading-[43px] text-main-black mt-9">Our Services</h2>
+      <h2 className="text-2xl sm:text-4xl font-bold text-center leading-[43px] text-main-black mt-9">Our Services</h2>
       
       {/* Image 1 */}
       <div className="h-[665px] max-w-[100vw] relative mt-7">
@@ -18,16 +18,13 @@ export default function Service() {
         <div className="absolute left-0 top-0 w-full h-full z-40">
           <div className="w-[90%] flex mx-auto mt-[79px]">
             <div>
-              <h2 className="text-[32px] leading-[39.01px] font-bold text-white">
-                For Suppliers
-              </h2>
-              <p className="font-normal w-[358px] text-2xl leading-7 text-white mt-7">
+              <h2 className="text-xl sm:text-[32px] leading-[39.01px] font-bold text-white">For Suppliers</h2>
+              <p className="font-normal w-full md:w-[358px] text-base sm:text-2xl leading-7 text-white mt-7">
                 Expand Your Reach :-List your products on a trusted platform
                 where healthcare providers shop for quality and reliability.
-                Manage inventory, track sales, and grow your business all in one
-                place
+                Manage inventory, track sales, and grow your business all in one place
               </p>
-              <button className="font-bold leading-[24.38px] text-[20px] w-[304px] h-16 rounded-lg bg-white text-blue-normal mt-[52px]">
+              <button className="font-bold leading-[24.38px] w-[214px] text-base sm:text-[20px] sm:w-[304px] h-16 rounded-lg bg-white text-blue-normal mt-[52px]">
                 Sign up as a Supplier
               </button>
             </div>
@@ -57,14 +54,14 @@ export default function Service() {
         <div className="absolute left-0 top-0 w-full h-full z-40">
           <div className="w-[90%] flex mx-auto mt-[79px]">
             <div>
-            <h2 className="text-[32px] leading-[39.01px] font-bold text-white">For Buyers</h2>
-              <p className="font-normal w-[358px] md:w-[421px] text-2xl leading-7 text-white mt-7">
+            <h2 className="text-xl sm:text-[32px] leading-[39.01px] font-bold text-white">For Buyers</h2>
+              <p className="font-normal w-full md:w-[421px] text-base sm:text-2xl leading-7 text-white mt-7">
                 Streamline Your Procurement :-Access verified suppliers and
                 high-quality products at competitive prices. Simplify
                 procurement processes, manage orders, and ensure on-time
                 delivery for your healthcare needs
               </p>
-              <button className="font-bold leading-[24.38px] text-[20px] w-[304px] h-16 rounded-lg bg-white text-blue-normal mt-[52px]"> Sign up as a Buyer </button>
+              <button className="font-bold leading-[24.38px] w-[214px] text-base sm:text-[20px] sm:w-[304px] h-16 rounded-lg bg-white text-blue-normal mt-[52px]"> Sign up as a Buyer </button>
             </div>
           </div>
         </div>

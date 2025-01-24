@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="w-[90%] mx-auto relative">
       <div className="flex flex-col md:flex-row items-center w-full gap-x-10 gap-y-10 mt-24 mb-8 h-full">
-        <div className="relative xs:w-[380px] xs:h-[380px] sm:w-[520px] sm:h-[520px] tablet:w-[600px] tablet:h-[600px] lg:w-[604px] lg:h-[627px] bg-red-400">
+        <div className="relative xs:w-[380px] xs:h-[380px] sm:w-[520px] sm:h-[520px] tablet:w-[600px] tablet:h-[600px] lg:w-[604px] lg:h-[627px]">
           <Image 
             src={AboutImage} 
             alt="about-image" 
