@@ -13,7 +13,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="w-full flex flex-col items-center gap-y-16  mx-auto mt-[51px] mb-7 || md:flex-row">
-          <div className="w-full flex flex-col items-center || md:w-2/6">
+          <div className="w-full flex flex-col items-center || md:w-2/6 md:items-start">
             <div className="flex justify-center items-center w-[180px] flex-col">
               <svg
                 width="90"
@@ -325,32 +325,29 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-full flex flex-col items-center || md:w-2/6">
-            <h2 className="font-bold text-base leading-[19.5px] text-white mb-6"> Quick Links
-            </h2>
-            <ul className="flex flex-col gap-y-8 items-center text-sm font-normal text-[#F1F1F1]">
+          <div className="w-full flex flex-col items-center || md:w-2/6 md:items-start bg-red-500">
+            <h2 className="font-bold text-base leading-[19.5px] text-white mb-6"> Quick Links </h2>
+            <ul className="flex flex-col gap-y-8 items-center text-sm font-normal text-[#F1F1F1] || md:items-start">
               <li className="leading-[17px]"> About us </li>
               <li className="leading-[17px]"> Our Services </li>
               <li className="leading-[17px]"> Market Place </li>
             </ul>
           </div>
 
-          <div className="w-full flex items-center flex-col || md:w-2/6">
-            <h2 className="font-bold text-base leading-[19.5px] text-white mb-6">
-              Contact us
-            </h2>
-            <ul className="flex flex-col gap-y-3">
-              <li className="text-[#F1F1F1] text-sm font-normal leading-[17px] flex items-center h-full gap-x-2.5">
+          <div className="w-full flex items-center flex-col text-white || md:w-2/6">
+            <h2 className="font-bold text-base leading-[19.5px] mb-6"> Contact us </h2>
+            <ul className="flex flex-col gap-y-3 text-sm font-normal || md:items-start md:mr-8">
+              <li className="leading-[17px] flex items-center h-full gap-x-2.5">
                 <div className="w-2.5 h-2.5 rounded-[50%] bg-white">{""}</div>
-                <span className="text-white font-base leading-5">ILIOS</span>
+                <span className="font-base leading-5">ILIOS</span>
               </li>
-              <li className="text-[#F1F1F1] text-sm font-normal leading-[17px] flex items-center h-full gap-x-2.5">
+              <li className="leading-[17px] flex items-center h-full gap-x-2.5">
                 <div className="w-2.5 h-2.5 rounded-[50%] bg-white">{""}</div>
-                <span className="text-white font-base leading-5">ILIOS</span>
+                <span className="font-base leading-5">ILIOS</span>
               </li>
-              <li className="text-[#F1F1F1] text-sm font-normal leading-[17px] flex items-center h-full gap-x-2.5">
+              <li className="leading-[17px] flex items-center h-full gap-x-2.5">
                 <div className="w-2.5 h-2.5 rounded-[50%] bg-white">{""}</div>
-                <span className="text-white font-base leading-5">ILIOS</span>
+                <span className="font-base leading-5">ILIOS</span>
               </li>
             </ul>
           </div>
