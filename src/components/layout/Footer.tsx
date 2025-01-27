@@ -364,9 +364,9 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <form className="w-full flex flex-col gap-y-3 mx-auto justify-center mt-20 mb-20 bg-red-500 sm:flex-row || sm:items-center">
+        <form className="w-full flex flex-col gap-y-3 mx-auto justify-center mt-20 mb-20 sm:flex-row || sm:items-center">
           <div className="flex h-full items-center">
-            <p className="font-medium leading-[19.5px] text-base text-white mr-5"> Newsletter </p>
+            <span className="font-medium leading-[19.5px] text-base text-white mr-5"> Newsletter </span>
           </div>
           <div className="flex h-10">
             <input type="email" placeholder="Enter your email address" className="w-[70%] sm:w-[343px] h-full outline-none bg-white rounded-s-[4px] px-3 py-2.5 text-sm text-[#B2B0B0]"/>
