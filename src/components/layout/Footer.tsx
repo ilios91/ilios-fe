@@ -12,8 +12,8 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="bg-red-500 grid gap-y-10 sm:grid-cols-3 w-full mx-auto mt-[51px] mb-7">
-          <div className="flex flex-col">
+        <div className="w-full flex flex-col items-center gap-y-16  mx-auto mt-[51px] mb-7 || md:flex-row">
+          <div className="w-full flex flex-col items-center || md:w-2/6">
             <div className="flex justify-center items-center w-[180px] flex-col">
               <svg
                 width="90"
@@ -325,24 +325,17 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col">
-            <h2 className="font-bold text-base leading-[19.5px] text-white mb-6">
-              Quick Links
+          <div className="w-full flex flex-col items-center || md:w-2/6">
+            <h2 className="font-bold text-base leading-[19.5px] text-white mb-6"> Quick Links
             </h2>
-            <ul className="flex flex-col gap-y-12">
-              <li className="text-[#F1F1F1] text-sm font-normal leading-[17px]">
-                About us
-              </li>
-              <li className="text-[#F1F1F1] text-sm font-normal leading-[17px]">
-                Our Services
-              </li>
-              <li className="text-[#F1F1F1] text-sm font-normal leading-[17px]">
-                Market Place
-              </li>
+            <ul className="flex flex-col gap-y-8 items-center text-sm font-normal text-[#F1F1F1]">
+              <li className="leading-[17px]"> About us </li>
+              <li className="leading-[17px]"> Our Services </li>
+              <li className="leading-[17px]"> Market Place </li>
             </ul>
           </div>
 
-          <div className="flex items-center flex-col">
+          <div className="w-full flex items-center flex-col || md:w-2/6">
             <h2 className="font-bold text-base leading-[19.5px] text-white mb-6">
               Contact us
             </h2>
