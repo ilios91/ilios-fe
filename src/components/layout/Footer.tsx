@@ -2,17 +2,17 @@ export default function Footer() {
   return (
     <footer className="relative  bg-blue-normal text-white flex w-full flex-col">
       <div className="w-[90%] mx-auto">
-        <h2 className="w-full text-xl mt-10 sm:mt-[61px] sm:text-[32px] font-bold text-center"> Ready to join the future of healthcare supply chains? </h2>
+        <h2 className="w-full text-base mt-10 font-bold text-center || sm:mt-[61px] sm:text-[32px]"> Ready to join the future of healthcare supply chains? </h2>
 
         {/* Let's connect button */}
         <div className="flex mx-auto mt-6 sm:mt-8 w-full justify-center">
-          <button className="bg-white text-base h-14 w-[170px] sm:w-[304px] sm:h-16 text-blue-normal font-bold sm:text-[18px] rounded-lg">
+          <button className="bg-white text-base h-12 w-[180px] sm:w-[304px] sm:h-16 text-blue-normal font-bold sm:text-[18px] rounded-lg || ">
             {"Let's connect"}
           </button>
         </div>
 
         {/* Links */}
-        <div className="w-full flex flex-col items-center gap-y-10  mx-auto mt-[51px] mb-7 || md:flex-row">
+        <div className="w-full flex flex-col items-center gap-y-14  mx-auto mt-[51px] mb-7 || md:flex-row">
           <div className="w-full flex flex-col items-center || md:w-2/6 md:items-start">
             <div className="flex justify-center items-center w-[180px] flex-col">
               <svg
@@ -325,7 +325,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-full flex flex-col items-center || md:w-2/6 md:items-start bg-red-500">
+          <div className="w-full flex flex-col items-center || md:w-2/6 lg:items-star">
             <h2 className="font-bold text-base leading-[19.5px] text-white mb-6"> Quick Links </h2>
             <ul className="flex flex-col gap-y-8 items-center text-sm font-normal text-[#F1F1F1] || md:items-start">
               <li className="leading-[17px]"> About us </li>
@@ -354,7 +354,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <form className="w-full flex flex-col gap-y-3 mx-auto justify-center mt-20 mb-20 sm:flex-row || sm:items-center">
+        <form className="w-full flex flex-col gap-y-3 mx-auto justify-center mt-16 mb-20 sm:flex-row || sm:items-center">
           <div className="flex h-full items-center">
             <span className="font-medium leading-[19.5px] text-base text-white mr-5"> Newsletter </span>
           </div>
