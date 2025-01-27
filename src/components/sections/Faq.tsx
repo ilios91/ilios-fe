@@ -12,7 +12,7 @@ export default function Faq() {
 
 
         <div className="w-full text-[#171717] md:text-main-black md:w-1/2">
-          <h4 className="font-semibold text-center text-base leading-[29.69px] || md:text-2xl "> Frequently Ask FAQs: </h4>
+          <h4 className="font-semibold text-center text-base leading-[29.69px] || md:text-2xl md:text-start"> Frequently Ask FAQs: </h4>
 
           {/* Accordions */}
           <div className="mt-6 || md:mt-9">
