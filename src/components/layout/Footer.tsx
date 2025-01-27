@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="w-full flex flex-col items-center gap-y-16  mx-auto mt-[51px] mb-7 || md:flex-row">
+        <div className="w-full flex flex-col items-center gap-y-10  mx-auto mt-[51px] mb-7 || md:flex-row">
           <div className="w-full flex flex-col items-center || md:w-2/6 md:items-start">
             <div className="flex justify-center items-center w-[180px] flex-col">
               <svg
