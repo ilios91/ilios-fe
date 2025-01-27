@@ -25,8 +25,7 @@ export default function Hero() {
           Simplifying Healthcare Procurement for Facilities and Suppliers
         </h1>
         <p className="font-normal text-sm sm:text-[18px] mt-6 w-[90%] lg:max-w-[1022px]">
-          To be proactive in providing a stable framework for the economic development of Nigeria, through effective, efficient, and transparent
-          implementation of monetary and exchange rate policy, and management of the financial sector
+          Find reliable suppliers, place orders, and ensure delivery with trusted logistics partners.
         </p>
         <div className="mt-20 md:mt-24">
           <button className="w-[224px] sm:w-[274px] h-14 text-blue-normal bg-white font-bold text-base sm:text-[20px] leading-6 rounded-lg"> Get started </button>

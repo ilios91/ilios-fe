@@ -364,16 +364,14 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <form className="flex justify-between items-center mx-auto mt-20 mb-20 h-10">
-          <span className="hidden sm:block font-medium leading-[19.5px] text-base text-white mr-5"> Newsletter </span>
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="w-[334px] h-full outline-none bg-white rounded-s-[4px] px-3 py-2.5 text-sm text-[#B2B0B0]"
-          />
-          <button className="h-full w-[134px] bg-[#2378F6] text-white text-base leading-[19px] outline-none">
-            Subscribe
-          </button>
+        <form className="flex justify-center items-center mx-auto mt-20 mb-20">
+          <div>
+            <span className="hidden sm:block font-medium leading-[19.5px] text-base text-white mr-5"> Newsletter </span>
+          </div>
+          <div className="flex h-10 w-full">
+            <input type="email" placeholder="Enter your email address" className="w-[70%] sm:w-[334px] h-full outline-none bg-white rounded-s-[4px] px-3 py-2.5 text-sm text-[#B2B0B0]"/>
+            <button className="w-[30%] h-full || sm:w-[134px] bg-[#2378F6] text-white text-base leading-[19px] outline-none"> Subscribe </button>
+          </div>
         </form>
       </div>
     </footer>
