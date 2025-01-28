@@ -1,9 +1,9 @@
 
 type ScreenSize = "width" | "height"
 
-export const screenSizes = (type: ScreenSize, width: number | null, height: number | null ) => {
+export const screenSizes = (type: ScreenSize, width = 0, height = 0 ) => {
 
-  if(type === "width" && width !== null){
+  if(type === "width"){
     return {
       xs: width < 576,
       sm: width >= 576 && width < 768,
@@ -14,7 +14,7 @@ export const screenSizes = (type: ScreenSize, width: number | null, height: numb
     }
   }
 
-  else if (type === "height" && height !== null){
+  else if (type === "height"){
     return {
       xs: height < 576,
       sm: height >= 576 && height < 768,
