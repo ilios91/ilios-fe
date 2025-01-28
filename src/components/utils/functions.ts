@@ -1,12 +1,27 @@
 
-export const screenSizes = (screenWidth: number, screenHeight: number) => {
-  return {
-    isExtraTinyScreen: screenWidth <= 360,
-    isTinyScreen: screenWidth >= 361 && screenWidth <= 400,
-    isMobile: screenWidth >= 401 && screenWidth <= 500,
-    isSmallScreen: screenWidth >= 501 && screenWidth <= 600,
-    isMediumSmallScreen: screenWidth >= 601 && screenWidth <= 750,
-    isMediumScreen: screenWidth >= 751 && screenWidth <= 998,
-    isDesktop: screenWidth >= 999 && screenWidth <= 1200,
+type ScreenSize = "width" | "height"
+
+export const screenSizes = (type: ScreenSize, width: number | null, height: number | null ) => {
+
+  if(type === "width" && width !== null){
+    return {
+      xs: width < 576,
+      sm: width >= 576 && width < 768,
+      md: width >= 768 && width < 992,
+      tablet: width >= 992 && width < 1280,
+      lg: width >= 1280 && width < 1440,
+      xl: width >= 1440
+    }
+  }
+
+  else if (type === "height" && height !== null){
+    return {
+      xs: height < 576,
+      sm: height >= 576 && height < 768,
+      md: height >= 768 && height < 992,
+      tablet: height >= 992 && height < 1280,
+      lg: height >= 1280 && height < 1440,
+      xl: height >= 1440
+    }
   }
 }
