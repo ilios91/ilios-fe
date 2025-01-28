@@ -1,3 +1,4 @@
+import { WindowSizeProvider } from "@/components/contexts/WindowSizeContext";
 import About from "@/components/sections/About";
 import Faq from "@/components/sections/Faq";
 import Hero from "@/components/sections/Hero";
@@ -7,7 +8,9 @@ export default function Home() {
   return (
     <main>
       <Hero/>
-      <About/>
+      <WindowSizeProvider>
+        <About/>
+      </WindowSizeProvider>
       <Service/>
       <Faq/>
     </main>

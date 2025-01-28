@@ -2,21 +2,13 @@
 
 import Image from "next/image";
 import AboutImage from "@/assets/images/about.svg";
-import { useEffect, useState } from "react";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function About() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [screenHeight, setScreenHeight] = useState(window.innerHeight);  
-  
-  const handleScreenResize = () => {
-    setScreenWidth(window.innerWidth);
-    setScreenHeight(window.innerHeight);
-  };
+const { screenWidth, screenHeight } = useWindowSize();
 
-  useEffect(() => {
-    window.addEventListener("resize", handleScreenResize);
-    return () => window.removeEventListener("resize", handleScreenResize);
-  }, [])
+console.log(screenWidth);
+console.log(screenHeight);
   
   return (
     <section id="about" className="w-[90%] mx-auto relative">
