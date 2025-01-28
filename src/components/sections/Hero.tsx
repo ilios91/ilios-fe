@@ -9,7 +9,7 @@ export default function Hero() {
         fill={true}
         src={HeroImage}
         alt="hero"
-        objectFit="cover"
+        className="object-cover"
         priority
         sizes="100vw"
       />
