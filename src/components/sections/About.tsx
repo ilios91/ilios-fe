@@ -1,7 +1,23 @@
+'use client';
+
 import Image from "next/image";
 import AboutImage from "@/assets/images/about.svg";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenHeight, setScreenHeight] = useState(window.innerHeight);  
+  
+  const handleScreenResize = () => {
+    setScreenWidth(window.innerWidth);
+    setScreenHeight(window.innerHeight);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleScreenResize);
+    return () => window.removeEventListener("resize", handleScreenResize);
+  }, [])
+  
   return (
     <section id="about" className="w-[90%] mx-auto relative">
       <div className="flex flex-col md:flex-row items-center w-full gap-x-10 gap-y-10 mt-24 mb-8 h-full">
