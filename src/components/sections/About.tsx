@@ -7,17 +7,7 @@ import AboutImageMobile from "@/assets/images/about-m.svg";import useWindowSize 
 export default function About() {
 const { screenWidth, screenHeight } = useWindowSize();
 
-const isExtraTinyScreen = (screenWidth < 360 ) ? 197 : 0;
-const isTinyScreen = (screenWidth >= 360 && screenWidth < 480) ? 297 : 0;
-const isMobile = (screenWidth >= 480 && screenWidth < 576) ? 197 : 0
-const isMediumScreen = (screenWidth >= 576 && screenWidth < 768) ? 197 : 0
-const isTablet = (screenWidth >= 768 && screenWidth < 992) ? 197 : 0
-const isDesktop= (screenWidth >= 992 && screenWidth < 1280) ? 197 : 0
-const isLargeScreen = (screenWidth >= 1280 ) ? 197 : 0;
-
-console.log(screenWidth);
-  
-return (
+eturn (
   <section id="about" className="w-[90%] mx-auto relative">
     <div className="flex flex-col md:flex-row items-center w-full gap-x-10 gap-y-10 mt-24 mb-8 h-full">
       {/* <div className="relative xs:w-[300px] xs:h-[380px] sm:w-[520px] sm:h-[520px] tablet:w-[600px] tablet:h-[600px] lg:w-[604px] lg:h-[627px]"> */}
@@ -25,10 +15,9 @@ return (
         <Image 
           src={AboutImage} 
           alt="about-image" 
-          // fill={true}
-          className="object-cover"
+          // fill={true}          className="object-cover"
           priority
-          width={screenWidth < 480 ? 257 : (screenWidth < 576) ? 297 : ( screenWidth < 768) ? 397 : undefined }
+          width={screenWidth < 480 ? 297 : (screenWidth < 576) ? 297 : ( screenWidth < 768) ? 397 : undefined }
           height={504}
         />
       </div>
