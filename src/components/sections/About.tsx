@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import AboutImage from "@/assets/images/about.svg";
-// import useWindowSize from "../hooks/useWindowSize";
 
 export default function About() {
 // const { screenWidth, screenHeight } = useWindowSize();
