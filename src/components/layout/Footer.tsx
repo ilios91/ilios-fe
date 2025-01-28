@@ -325,7 +325,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-full flex flex-col items-center || md:w-2/6 lg:items-star">
+          <div className="w-full flex flex-col items-center || md:w-2/6 lg:items-start">
             <h2 className="font-bold text-base leading-[19.5px] text-white mb-6"> Quick Links </h2>
             <ul className="flex flex-col gap-y-8 items-center text-sm font-normal text-[#F1F1F1] || md:items-start">
               <li className="leading-[17px]"> About us </li>
