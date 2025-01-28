@@ -4,7 +4,7 @@ import HeroImage from "@/assets/images/hero.svg";
 
 export default function Hero() {
   return (
-    <section className={`relative h-[250px] sm:h-[290px] md:h-[480px] tablet:h-[calc(100vh-90px)] top-[90px] overflow-hidden bg-red-500`}>
+    <section className={`relative h-[280px] sm:h-[320px] md:h-[480px] tablet:h-[calc(100vh-90px)] top-[90px] overflow-hidden bg-red-500`}>
       <Image
         fill={true}
         src={HeroImage}
