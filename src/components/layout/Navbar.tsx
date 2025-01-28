@@ -7,10 +7,8 @@ import { useState } from "react";
 
 const links = [
   { id: "about", label: "About us" },
-  { id: "services", label: "Our Services" },
+  { id: "service", label: "Our Services" },
   { id: "contact", label: "Contact us" },
-  { id: "faq", label: "FAQ" },
-  { id: "more", label: "More" }
 ]
 
 export default function Navbar() {
@@ -62,16 +60,18 @@ export default function Navbar() {
             }
           >
           <div className="flex flex-col md:flex-row items-start md:items-center h-full pl-8 md:mt-[90px] pt-4 md:pt-0 md:pl-0">
-            <ul className="w-[90%] flex flex-col md:flex-row md:gap-y-0 md:gap-x-12">
+            <ul className="w-[90%] flex flex-col md:flex-row md:gap-y-0 md:gap-x-12 md:w-full">
               { links.map((link) => (
                 <li
                   // id={link.id}
                   key={link.id} 
-                  className=" cursor-pointer pl-2.5 py-7 text-main-black font-bold text-base md:text-xl border-b-2 border-b-[#E9E9E9" 
+                  className=" cursor-pointer pl-2.5 py-7 text-main-black font-bold text-base md:text-xl border-b-2 border-b-[#E9E9E9 md:border-b-0" 
                   onClick={() => scrollToSection(link.id)}
                   >{link.label}
                 </li>
                 ))}
+                <li className="block cursor-pointer pl-2.5 py-7 text-main-black border-b-2 border-b-[#E9E9E9 font-bold text-base md:text-xl md:hidden" onClick={() => scrollToSection("faq")}>FAQ</li>
+                <li className="block cursor-pointer pl-2.5 py-7 text-main-black font-bold text-base md:text-xl md:hidden" onClick={() => scrollToSection("more")}>More</li>
             </ul>
 
             {/* Mobile Get started menu */}
