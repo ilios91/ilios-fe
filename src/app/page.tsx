@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <main>
       <Hero/>
-        <About/>
-        <WindowSizeProvider>
-          <Service/>
-        </WindowSizeProvider>
+      <About/>
+      <WindowSizeProvider>
+        <Service/>
+      </WindowSizeProvider>
       <Faq/>
     </main>
   );

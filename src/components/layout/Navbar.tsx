@@ -19,6 +19,7 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    setIsMenuOpen(false);
   };
 
   const toggleMenu = () => {
