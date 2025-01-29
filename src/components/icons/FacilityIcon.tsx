@@ -1,7 +1,8 @@
-function FacilityIcon() {
+interface Facility { className?: string }
+
+function FacilityIcon( { className }: Facility ) {
   return (
-    // <svg className="w-[306px] h-[306px]" width="306" height="196" viewBox="0 0 306 196" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <svg className="w-[306px] h-[306px]" viewBox="0 0 306 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="306" height="196" fill="#D2D2D2"/>
 <path d="M-674 -369C-674 -382.255 -663.255 -393 -650 -393H742C755.255 -393 766 -382.255 766 -369V607C766 620.255 755.255 631 742 631H-650C-663.255 631 -674 620.255 -674 607V-369Z" fill="#428BF8"/>
 <rect x="-10" y="-137" width="325" height="470" rx="18" fill="#FAFAFA"/>
