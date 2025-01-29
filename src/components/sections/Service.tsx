@@ -83,7 +83,7 @@ const { screenWidth } = useWindowSize();
           alt="service image"
           fill
           priority
-          objectFit="cover"
+          className="object-cover"
           sizes="100vw"
           quality={100}
         />
