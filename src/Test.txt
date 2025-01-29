@@ -1,1 +1,205 @@
-||
+src/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/
+│   │   ├── register/
+│   │   └── forgot-password/
+│   ├── (dashboard)/
+│   │   ├── supplier/
+│   │   │   ├── page.tsx
+│   │   │   ├── inventory/
+│   │   │   ├── orders/
+│   │   │   └── analytics/
+│   │   └── facility/
+│   │       ├── page.tsx
+│   │       ├── orders/
+│   │       ├── suppliers/
+│   │       └── reports/
+│   └── page.tsx
+├── components/
+│   ├── common/
+│   │   ├── Button/
+│   │   ├── Input/
+│   │   ├── Table/
+│   │   └── Modal/
+│   ├── supplier/
+│   │   ├── InventoryCard/
+│   │   ├── OrdersList/
+│   │   └── Dashboard/
+│   └── facility/
+│       ├── OrderForm/
+│       ├── SuppliersList/
+│       └── Dashboard/
+├── hooks/
+│   ├── useAuth.ts
+│   ├── useOrders.ts
+│   └── useInventory.ts
+├── lib/
+│   ├── types/
+│   ├── utils/
+│   └── constants/
+├── services/
+│   ├── auth/
+│   ├── orders/
+│   └── inventory/
+└── styles/
+    ├── globals.css
+    └── components/
+
+
+// 1. App Directory (Routes)
+app/
+  (auth)/ // Group for authentication routes
+    login/
+    register/
+    forgot-password/
+  
+  (dashboard)/ // Group for dashboard routes
+    supplier/ // Supplier specific routes
+    facility/ // Healthcare facility specific routes
+
+// 2. Components
+components/
+  common/ // Shared components
+    Button/
+      index.tsx
+      Button.types.ts
+      Button.test.tsx
+  
+  supplier/ // Supplier specific components
+    InventoryCard/
+      index.tsx
+      InventoryCard.types.ts
+  
+  facility/ // Facility specific components
+    OrderForm/
+      index.tsx
+      OrderForm.types.ts
+
+// 3. Example component structure
+components/common/Button/index.tsx:
+
+
+// 1. App Directory (Routes)
+app/
+  (auth)/ // Group for authentication routes
+    login/
+    register/
+    forgot-password/
+  
+  (dashboard)/ // Group for dashboard routes
+    supplier/ // Supplier specific routes
+    facility/ // Healthcare facility specific routes
+
+// 2. Components
+components/
+  common/ // Shared components
+    Button/
+      index.tsx
+      Button.types.ts
+      Button.test.tsx
+  
+  supplier/ // Supplier specific components
+    InventoryCard/
+      index.tsx
+      InventoryCard.types.ts
+  
+  facility/ // Facility specific components
+    OrderForm/
+      index.tsx
+      OrderForm.types.ts
+
+// 3. Example component structure
+components/common/Button/index.tsx:
+
+
+
+type ButtonProps = {
+  variant: 'primary' | 'secondary';
+  size: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+}
+
+export const Button = ({ variant, size, children }: ButtonProps) => {
+  return (
+    <button className={`btn-${variant} btn-${size}`}>
+      {children}
+    </button>
+  );
+};
+
+
+// app/(dashboard)/layout.tsx
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const { user, role } = useAuth();
+
+  if (!user) {
+    redirect('/login');
+  }
+
+  return (
+    <div className="dashboard-layout">
+      <Sidebar role={role} />
+      <main>{children}</main>
+    </div>
+  );
+}
+
+// app/(dashboard)/supplier/page.tsx
+export default function SupplierDashboard() {
+  return (
+    <div>
+      <SupplierStats />
+      <InventoryOverview />
+      <RecentOrders />
+    </div>
+  );
+}
+
+
+
+// lib/types/user.ts
+export interface User {
+  id: string;
+  role: 'supplier' | 'facility';
+  name: string;
+  email: string;
+}
+
+// lib/types/order.ts
+export interface Order {
+  id: string;
+  supplierId: string;
+  facilityId: string;
+  items: OrderItem[];
+  status: 'pending' | 'approved' | 'shipped' | 'delivered';
+  createdAt: Date;
+}
+
+
+
+// Custom Hook
+
+// hooks/useOrders.ts
+export const useOrders = (role: 'supplier' | 'facility') => {
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await fetch(`/api/${role}/orders`);
+        const data = await response.json();
+        setOrders(data);
+      } catch (error) {
+        console.error('Error fetching orders:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchOrders();
+  }, [role]);
+
+  return { orders, loading };
+};

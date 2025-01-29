@@ -3,7 +3,7 @@
 import Image from "next/image";
 import serviceImage1 from "@/assets/images/service-image-1.svg";
 import serviceImage2 from "@/assets/images/service-image-2.svg";
-import useWindowSize from "../hooks/useWindowSize";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function Service() {
 const { screenWidth } = useWindowSize();

@@ -1,8 +1,8 @@
-import { WindowSizeProvider } from "@/components/contexts/WindowSizeContext";
-import About from "@/components/sections/About";
-import Faq from "@/components/sections/Faq";
-import Hero from "@/components/sections/Hero";
-import Service from "@/components/sections/Service";
+import { WindowSizeProvider } from "@/contexts/WindowSizeContext";
+import About from "@/components/landing-page/About";
+import Faq from "@/components/landing-page/Faq";
+import Hero from "@/components/landing-page/Hero";
+import Service from "@/components/landing-page/Service";
 
 export default function Home() {
   return (
