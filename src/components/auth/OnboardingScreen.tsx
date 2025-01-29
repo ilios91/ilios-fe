@@ -1,5 +1,6 @@
 // import { ReactNode } from "react";
 import FacilityIcon from "../icons/FacilityIcon";
+import Logo from "../icons/Logo";
 import SupplierIcon from "../icons/SupplierIcon";
 
 // type UserRole = "facility" | 'supplier';
@@ -8,7 +9,10 @@ import SupplierIcon from "../icons/SupplierIcon";
 function OnboardingScreen() {
 
   return (
-    <section className="h-[100vh] bg-blue-normal">
+    <section className="h-[calc(100vh-90px bg-blue-normal pt-8">
+      <div className="flex mx-auto md:w-[90%] tablet:w-[85%]">
+        <Logo className="w-[82px] h-[83px]" />
+      </div>
       <div className="flex items-center mx-auto h-full md:w-[90%] tablet:w-[85%] ">
         <div className="max-w-[447px] text-[#FAFAFA]">
           <h1 className="text-5xl font-bold mb-10 leading-[58px]">Choose Your Role to Get Started</h1>
@@ -22,6 +26,9 @@ function OnboardingScreen() {
             <SupplierIcon className="w-[225.55px] h-[224.8px]"/>
           </div>
         </div>
+      </div>
+      <div className="flex mx-auto md:w-[90%] tablet:w-[85%]">
+        <Logo className="w-[82px] h-[83px]" />
       </div>
     </section>
   );
