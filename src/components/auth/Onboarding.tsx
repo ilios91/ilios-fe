@@ -5,36 +5,30 @@ import SupplierIcon from "../icons/SupplierIcon";
 import Button from '../common/buttons/Button';
 import OnboardingCard from './OnboardingCard';
 import AuthLogo from "./AuthLogo";
-import { UserRole } from "./types";
+import { Role } from "./types";
 import { ReactNode, useState } from "react";
 
-interface CardProps {
-  text: string,
-  icon: ReactNode,
-  role: UserRole,
-}
+interface CardProps { text: string, icon: ReactNode, userRole: Role }
 
 const OnboardingCards: CardProps[] = [
   {
     text: "Facility",
     icon: <FacilityIcon className="w-[275px] h-[195.25px]"/>,
-    role: "facility"
+    userRole: "facility"
   },
   {
     text: "Supplier",
     icon: <SupplierIcon className="w-[225.55px] h-[224.8px]"/>,
-    role: "supplier"
+    userRole: "supplier"
   }
 ]
 
 function Onboarding() {
-  const [selectedRole, setSelectedRole] = useState<UserRole>(null);
+  const [selectedRole, setSelectedRole] = useState<Role>(null);
   
-  
-  const handleRoleSelect = (selectedRole: UserRole) => {
+  const handleRoleSelect = (selectedRole: Role) => {
     setSelectedRole(selectedRole);
   }
-
 
   return (
     <section className="h-[100vh] bg-blue-normal/70 pt-6">
@@ -56,32 +50,21 @@ function Onboarding() {
         {/* Cards */}
         <div className="flex-1 flex flex-col">
           <div className="flex gap-x-10 justify-center">
-            { OnboardingCards.map(({ role, text, icon }) => {
+            { OnboardingCards.map(({ userRole, text, icon }) => {
               return(
                 <OnboardingCard 
-                  key={role} 
-                  role={role} 
+                  key={userRole} 
+                  userRole={userRole} 
                   text={text} 
                   icon={icon}
                   selectedRole={selectedRole}
-                  onRoleSelect={() => handleRoleSelect(role)}
+                  handleRoleSelect={() => handleRoleSelect(userRole)}
                 />
               )})
             }
-
-            {/* <OnboardingCard 
-              role="supplier" 
-              text="Facility" 
-              icon={<FacilityIcon className="w-[275px] h-[195.25px]"/>}
-            />
-            <OnboardingCard 
-              role="facility" 
-              text="Supplier" 
-              icon={<SupplierIcon className="w-[225.55px] h-[224.8px]"/>}
-            /> */}
           </div>
           {/* Continue Button */}
-          <Button text="Continue" className="mt-14 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"/>
+          <Button disabled={ selectedRole !== null ? true :false } text="Continue" className="mt-14 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"/>
         </div>
 
       </div>
