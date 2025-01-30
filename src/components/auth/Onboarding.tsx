@@ -6,11 +6,7 @@ import Button from '../common/buttons/Button';
 import OnboardingCard from './OnboardingCard';
 import AuthLogo from "./AuthLogo";
 
-
-
-function OnboardingScreen() {
-
-  
+function Onboarding() {
   return (
     <section className="h-[100vh] bg-blue-normal/70 pt-6">
 
@@ -31,8 +27,16 @@ function OnboardingScreen() {
         {/* Cards */}
         <div className="flex-1 flex flex-col">
           <div className="flex gap-x-10 justify-center">
-            <OnboardingCard role="supplier" text="Facility" icon={<FacilityIcon className="w-[275px] h-[195.25px]"/>} />
-            <OnboardingCard role="facility" text="Supplier" icon={<SupplierIcon className="w-[225.55px] h-[224.8px]"/>} />
+            <OnboardingCard 
+              role="supplier" 
+              text="Facility" 
+              icon={<FacilityIcon className="w-[275px] h-[195.25px]"/>}
+            />
+            <OnboardingCard 
+              role="facility" 
+              text="Supplier" 
+              icon={<SupplierIcon className="w-[225.55px] h-[224.8px]"/>}
+            />
           </div>
           {/* Continue Button */}
           <Button text="Continue" className="mt-14 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"/>
@@ -43,4 +47,4 @@ function OnboardingScreen() {
   );
 }
 
-export default OnboardingScreen;
+export default Onboarding;
