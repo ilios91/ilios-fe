@@ -21,12 +21,26 @@ function OnboardingScreen() {
         </div>
         <div className="flex-1 flex flex-col">
           <div className="flex gap-x-10 justify-center">
-            <div className="cursor-pointer flex items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[329px] max-w-[329px] max-h-[474px] h-[474px]">
-              <FacilityIcon className="w-[305px] h-[195.25px]"/>
+
+            {/* Facility Card */}
+            <div className="cursor-pointer flex flex-col items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[299px] max-w-[299px] max-h-[424px] h-[424px]">
+              <div className="flex items-center justify-center h-[85%] w-full">
+                <FacilityIcon className="w-[275px] h-[195.25px]"/>
+              </div>
+              <div className="h-[15%]">
+                <h5 className="text-[20px] font-bold leading-[24px] text-[#171717]">Facility</h5>
+              </div>
             </div>
+
+            {/* Supplier Card */}
             <div className="flex flex-col items-center">
-              <div className="cursor-pointer flex flex-col items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[329px] max-w-[329px] max-h-[474px] h-[474px]">
-                <SupplierIcon className="w-[225.55px] h-[224.8px]"/>
+              <div className="cursor-pointer flex flex-col items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[329px] max-w-[329px] max-h-[424px] h-[424px]">
+                <div className="flex items-center justify-center h-[85%] w-full">
+                  <SupplierIcon className="w-[225.55px] h-[224.8px]"/>
+                </div>
+                <div className="h-[15%]">
+                  <h5 className="text-[20px] font-bold leading-[24px] text-[#171717]">Supplier</h5>
+                </div>
               </div>
             </div>
           </div>
@@ -34,7 +48,7 @@ function OnboardingScreen() {
           {/* Continue Button */}
           <Button 
             text="Continue" 
-            className="mt-10 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"
+            className="mt-14 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"
           />
         </div>
       </div>
