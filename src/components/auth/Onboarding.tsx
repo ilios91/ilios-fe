@@ -5,8 +5,37 @@ import SupplierIcon from "../icons/SupplierIcon";
 import Button from '../common/buttons/Button';
 import OnboardingCard from './OnboardingCard';
 import AuthLogo from "./AuthLogo";
+import { UserRole } from "./types";
+import { ReactNode, useState } from "react";
+
+interface CardProps {
+  text: string,
+  icon: ReactNode,
+  role: UserRole,
+}
+
+const OnboardingCards: CardProps[] = [
+  {
+    text: "Facility",
+    icon: <FacilityIcon className="w-[275px] h-[195.25px]"/>,
+    role: "facility"
+  },
+  {
+    text: "Supplier",
+    icon: <SupplierIcon className="w-[225.55px] h-[224.8px]"/>,
+    role: "supplier"
+  }
+]
 
 function Onboarding() {
+  const [selectedRole, setSelectedRole] = useState<UserRole>(null);
+  
+  
+  const handleRoleSelect = (selectedRole: UserRole) => {
+    setSelectedRole(selectedRole);
+  }
+
+
   return (
     <section className="h-[100vh] bg-blue-normal/70 pt-6">
 
@@ -27,7 +56,20 @@ function Onboarding() {
         {/* Cards */}
         <div className="flex-1 flex flex-col">
           <div className="flex gap-x-10 justify-center">
-            <OnboardingCard 
+            { OnboardingCards.map(({ role, text, icon }) => {
+              return(
+                <OnboardingCard 
+                  key={role} 
+                  role={role} 
+                  text={text} 
+                  icon={icon}
+                  selectedRole={selectedRole}
+                  onRoleSelect={() => handleRoleSelect(role)}
+                />
+              )})
+            }
+
+            {/* <OnboardingCard 
               role="supplier" 
               text="Facility" 
               icon={<FacilityIcon className="w-[275px] h-[195.25px]"/>}
@@ -36,7 +78,7 @@ function Onboarding() {
               role="facility" 
               text="Supplier" 
               icon={<SupplierIcon className="w-[225.55px] h-[224.8px]"/>}
-            />
+            /> */}
           </div>
           {/* Continue Button */}
           <Button text="Continue" className="mt-14 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"/>
