@@ -7,6 +7,7 @@ import OnboardingCard from './OnboardingCard';
 import AuthLogo from "./AuthLogo";
 import { Role } from "./types";
 import { ReactNode, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface CardProps { text: string, icon: ReactNode, userRole: Role }
 
@@ -24,10 +25,16 @@ const OnboardingCards: CardProps[] = [
 ]
 
 function Onboarding() {
-  const [selectedRole, setSelectedRole] = useState<Role>(null);
+  const [selectedRole, setSelectedRole] = useState<Role | null>(null);
+  const router = useRouter();
   
   const handleRoleSelect = (selectedRole: Role) => {
     setSelectedRole(selectedRole);
+  }
+
+  const navigateToRegistrationPage = () => {
+    if(selectedRole === null) return;
+    router.push(`/auth/register?role=${selectedRole}`)
   }
 
   return (
@@ -64,7 +71,12 @@ function Onboarding() {
             }
           </div>
           {/* Continue Button */}
-          <Button disabled={ selectedRole !== null ? true :false } text="Continue" className="mt-14 mx-auto w-[518px] h-12 bg-blue-normal font-bold text-white text-[18px] rounded-lg"/>
+          <Button
+            handleClick={navigateToRegistrationPage}
+            disabled={selectedRole === null ? false : true } 
+            text="Continue" 
+            className={`mt-14 mx-auto w-[518px] h-12 ${selectedRole !== null ? "bg-blue-normal" : "bg-blue-normal/40"} font-bold text-white text-[18px] rounded-lg`}
+          />
         </div>
 
       </div>

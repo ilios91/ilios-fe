@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
-export type Role = "facility" | 'supplier' | null;
+export type Role = "facility" | 'supplier' ;
 
 export interface OnboardingCardProps {
   text: string,
   icon: ReactNode,
-  userRole: Role,
-  selectedRole: Role,
+  userRole: Role | null,
+  selectedRole: Role | null,
   handleRoleSelect: () => void
 }
