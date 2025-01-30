@@ -12,7 +12,11 @@ function OnboardingScreen() {
   return (
     <section className="h-[100vh] bg-blue-normal/70 pt-5">
       <div className="flex mx-auto md:w-[90%] tablet:w-[85%]">
-        <Logo className="w-[82px] h-[83px]"/>
+        <div className="flex flex-col gap-y-2">
+          <Logo className="w-[55.52px] h-[55.52px]"/>
+          <p className="text-bold text-[#FAFAFA] text-base leading-[18px] text-center">ILIOS</p>
+        </div>
+        
       </div>
       <div className="flex items-center mx-auto md:w-[90%] tablet:w-[85%] mt-10">
         <div className="w-1/2 text-[#FAFAFA]">
@@ -24,21 +28,21 @@ function OnboardingScreen() {
 
             {/* Facility Card */}
             <div className="cursor-pointer flex flex-col items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[299px] max-w-[299px] max-h-[424px] h-[424px]">
-              <div className="flex items-center justify-center h-[85%] w-full">
+              <div className="flex items-center justify-center h-[80%] w-full">
                 <FacilityIcon className="w-[275px] h-[195.25px]"/>
               </div>
-              <div className="h-[15%]">
+              <div className="h-[20%]">
                 <h5 className="text-[20px] font-bold leading-[24px] text-[#171717]">Facility</h5>
               </div>
             </div>
 
             {/* Supplier Card */}
             <div className="flex flex-col items-center">
-              <div className="cursor-pointer flex flex-col items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[329px] max-w-[329px] max-h-[424px] h-[424px]">
-                <div className="flex items-center justify-center h-[85%] w-full">
+              <div className="cursor-pointer flex flex-col items-center justify-center border-[#CEDFF9] border-4 rounded-[20px] bg-white w-[299px] max-w-[299px] max-h-[424px] h-[424px]">
+                <div className="flex items-center justify-center h-[80%] w-full">
                   <SupplierIcon className="w-[225.55px] h-[224.8px]"/>
                 </div>
-                <div className="h-[15%]">
+                <div className="h-[20%]">
                   <h5 className="text-[20px] font-bold leading-[24px] text-[#171717]">Supplier</h5>
                 </div>
               </div>
