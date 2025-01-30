@@ -34,11 +34,11 @@ function Onboarding() {
 
   const navigateToRegistrationPage = () => {
     if(selectedRole === null) return;
-    router.push(`/auth/register?role=${selectedRole}`)
+    router.push(`/auth/signup?role=${selectedRole}`)
   }
 
   return (
-    <section className="h-[100vh] bg-blue-normal/70 pt-6">
+    <main className="h-[100vh] bg-blue-normal/70 pt-6">
 
       {/* Logo */}
       <div className="flex mx-auto md:w-[90%] tablet:w-[85%]">
@@ -80,7 +80,7 @@ function Onboarding() {
         </div>
 
       </div>
-    </section>
+    </main>
   );
 }
 
