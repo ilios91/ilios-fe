@@ -20,6 +20,10 @@ export async function register(prevState: any, formData: FormData) {
     };
   }
 
-  // Return the validated data
+  // Extract form fields
+  // const { email, phone_number, password, company_name, registration_number } = validatedFields.data;
+
+  return validatedFields.data
+
 
 }

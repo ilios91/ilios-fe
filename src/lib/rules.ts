@@ -12,7 +12,7 @@ export const RegisterFormSchema = z
         message: "Please enter a valid email",
       })
       .trim(),
-    phone: z.string().regex(/^0\d{10}$/, {
+    phone_number: z.string().regex(/^0\d{10}$/, {
       message: "Phone number must be 11 digits and start with 0",
     }),
     password: z

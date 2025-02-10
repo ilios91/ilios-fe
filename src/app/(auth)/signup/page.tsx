@@ -22,10 +22,6 @@ const initialState: InitialStateInterface = {
 export default function Signup() {
   const [state, action, isPending] = useActionState(register, initialState);
 
-  const handleChange = () => {
-    // return {}
-  };
-
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
       <div className="bg-blue-normal/70 w-1/2 h-full flex rounded-2xl">
@@ -48,56 +44,50 @@ export default function Signup() {
               name="company_name"
               id="company_name"
               label="Company Name:"
-              value="company_name"
+              defaultValue={state.company_name}
               placeholder="Emzor Pharm"
               type="text"
-              onChange={handleChange}
             />
             <FormGroup
               name="email"
               id="email"
               label="Email"
-              value="Email"
+              defaultValue={state.email}
               placeholder="emzorpharm@gmail.com"
               type="email"
-              onChange={handleChange}
-              error={state?.errors?.email?.[0]}
+              error={state?.errors?.email}
             />
             <FormGroup
               name="phone_number"
               id="phone_number"
               label="Phone Number:"
-              value="234806332222"
+              defaultValue={state.phone_number}
               placeholder="234806332222"
               type="text"
-              onChange={handleChange}
             />
             <FormGroup
               name="registration_number"
               id="registration_number"
               label="Registration Number:"
-              value="Test"
+              defaultValue={state.registration_number}
               placeholder="77777777777"
               type="text"
-              onChange={handleChange}
             />
             <FormGroup
               name="password"
               id="password"
               label="Company Name:"
-              value="Test"
+              defaultValue={state.password}
               placeholder="Emzor Pharm"
               type="password"
-              onChange={handleChange}
             />
             <FormGroup
               name="confirm_password"
               id="confirm_password"
               label="Company Name:"
-              value="Test"
+              defaultValue={state.confirm_password}
               placeholder="Emzor Pharm"
               type="text"
-              onChange={handleChange}
             />
 
             <Button
