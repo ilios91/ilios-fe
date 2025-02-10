@@ -16,7 +16,6 @@ const initialState: InitialStateInterface = {
   registration_number: "",
   password: "",
   confirm_password: "",
-  errors: {}
 };
 
 export default function Signup() {
@@ -44,7 +43,7 @@ export default function Signup() {
               name="company_name"
               id="company_name"
               label="Company Name:"
-              defaultValue={state.company_name}
+              defaultValue={state?.company_name}
               placeholder="Emzor Pharm"
               type="text"
             />
@@ -52,16 +51,16 @@ export default function Signup() {
               name="email"
               id="email"
               label="Email"
-              defaultValue={state.email}
+              defaultValue={state?.email}
               placeholder="emzorpharm@gmail.com"
               type="email"
-              error={state?.errors?.email}
+              errors={state?.errors}
             />
             <FormGroup
               name="phone_number"
               id="phone_number"
               label="Phone Number:"
-              defaultValue={state.phone_number}
+              defaultValue={state?.phone_number}
               placeholder="234806332222"
               type="text"
             />
@@ -69,31 +68,27 @@ export default function Signup() {
               name="registration_number"
               id="registration_number"
               label="Registration Number:"
-              defaultValue={state.registration_number}
+              defaultValue={state?.registration_number}
               placeholder="77777777777"
               type="text"
             />
             <FormGroup
               name="password"
               id="password"
-              label="Company Name:"
-              defaultValue={state.password}
-              placeholder="Emzor Pharm"
+              label="Password"
               type="password"
             />
             <FormGroup
               name="confirm_password"
               id="confirm_password"
-              label="Company Name:"
-              defaultValue={state.confirm_password}
-              placeholder="Emzor Pharm"
-              type="text"
+              label="Confirm Password:"
+              type="password"
             />
 
             <Button
               disabled={isPending}
               className="mt-5 text-sm w-[518px] h-11 rounded-lg text-white bg-blue-normal"
-              text="Sign Up"
+              text={isPending ? "Loading..." : "Sign Up"}
             />
           </div>
 

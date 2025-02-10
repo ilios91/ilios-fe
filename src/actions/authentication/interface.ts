@@ -15,22 +15,4 @@ export interface InitialStateInterface {
   };
 }
 
-// const initialState = {
-//   company_name: "",
-//   email: "",
-//   phone_number: "",
-//   registration_number: "",
-//   password: "",
-//   confirm_password: "",
-// };
 
-
-export interface SchemaErrorInterface {
-  errors?: {
-    email?: string[] | undefined;
-    company_name?: string[] | undefined;
-    phone?: string[] | undefined;
-    password?: string[] | undefined;
-    confirm_password?: string[] | undefined;
-  };
-}

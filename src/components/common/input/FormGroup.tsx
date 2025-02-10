@@ -7,7 +7,14 @@ export interface FormGroupProps {
   id: string;
   placeholder?: string;
   defaultValue?: string;
-  error?: string
+  errors?: {
+    company_name?: string[] | undefined;
+    email?: string[] | undefined;
+    phone_number?: string[] | undefined;
+    registration_number?: string[] | undefined;
+    password?: string[] | undefined | undefined
+    confirm_password?: string[] | undefined;
+  };
 }
 
 export default function FormGroup({
@@ -17,7 +24,7 @@ export default function FormGroup({
   defaultValue,
   name,
   id,
-  error
+  errors
 }: FormGroupProps) {
   return (
     <div className="flex flex-col w-full gap-y-2">
@@ -34,7 +41,10 @@ export default function FormGroup({
         placeholder={placeholder}
         defaultValue={defaultValue}
       />
-      {error && <p className="error">{error}</p>}
+      {errors && errors[name] && (
+        <p className="error">{errors[name]}</p>
+      )}
+      {errors && <p className="error">{}</p>}
     </div>
   );
 }

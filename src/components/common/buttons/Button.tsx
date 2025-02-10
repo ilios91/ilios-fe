@@ -2,13 +2,11 @@ interface ButtonProps {
   className?: string,
   text?: string,
   disabled?: boolean,
-  handleClick?: () => void
 }
-export default function Button({ className, text, handleClick, disabled }: ButtonProps) {
+export default function Button({ className, text, disabled }: ButtonProps) {
   return (
     <button 
-      onClick={handleClick} 
-      disabled={!disabled} 
+      disabled={disabled} 
       className={className}
     >{text}</button>
   );

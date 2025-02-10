@@ -6,6 +6,10 @@ export const RegisterFormSchema = z
       .string()
       .min(1, { message: "Be at least 1 character long" })
       .trim(),
+    registration_number: z
+      .string()
+      .min(1, { message: "Be at least 1 character long" })
+      .trim(),
     email: z
       .string()
       .email({
@@ -28,8 +32,6 @@ export const RegisterFormSchema = z
     confirm_password: z.string().trim(),
   })
   .superRefine((value, context) => {
-    // value contains all the fields from your schema (email, password, confirmPassword e.t.c )
-    // context object let's you add custom validation
     if (value.password !== value.confirm_password) {
       context.addIssue({
         code: z.ZodIssueCode.custom, // Indicates a custom validation error
