@@ -25,16 +25,16 @@ export const RegisterFormSchema = z
         message: "Contain at least one special character.",
       })
       .trim(),
-    confirmPassword: z.string().trim(),
+    confirm_password: z.string().trim(),
   })
-  .superRefine((value, context) => {     
+  .superRefine((value, context) => {
     // value contains all the fields from your schema (email, password, confirmPassword e.t.c )
     // context object let's you add custom validation
-    if(value.password !== value.confirmPassword){
+    if (value.password !== value.confirm_password) {
       context.addIssue({
-        code: z.ZodIssueCode.custom,   // Indicates a custom validation error
-        message: "Passwords do not match",   // Error message
-        path: ["confirmPassword"]    // Specifies which field caused the error
-      })
+        code: z.ZodIssueCode.custom, // Indicates a custom validation error
+        message: "Passwords do not match", // Error message
+        path: ["confirm_password"], // Specifies which field caused the error
+      });
     }
   });
