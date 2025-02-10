@@ -5,10 +5,10 @@ interface InputProps {
   value?: string,
   defaultValue?: string
 }
-export default function Input({ type, className, placeholder }: InputProps) {
+export default function Input({ type, className, placeholder, value }: InputProps) {
   return (
     <input
-      value={} 
+      value={value} 
       type={type}
       className={className}
       placeholder={placeholder}
