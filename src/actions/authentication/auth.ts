@@ -1,9 +1,10 @@
 "use server";
 
 import { RegisterFormSchema } from "@/lib/rules";
+import { InitialState } from "./interface";
+import { redirect } from "next/navigation";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function register(prevState: any, formData: FormData) {
+export async function register(prevState: InitialState, formData: FormData) {
 
   console.log(1);
   console.log(prevState);
@@ -22,13 +23,13 @@ export async function register(prevState: any, formData: FormData) {
 
   if (!validatedFields.success) {
     return {
-      ...prevState,
-      company_name: formData.get("company_name"),
-      email: formData.get("email"),
-      phone_number: formData.get("phone_number"),
-      registration_number: formData.get("registration_number"),
-      password: formData.get("password"),
-      confirm_password: formData.get("confirm_password"),
+      // ...prevState,
+      company_name: formData.get("company_name") as string,
+      email: formData.get("email") as string,
+      phone_number: formData.get("phone_number") as string,
+      registration_number: formData.get("registration_number") as string,
+      password: formData.get("password") as string,
+      confirm_password: formData.get("confirm_password") as string,
       errors: validatedFields.error.flatten().fieldErrors,
     };
   }
@@ -37,7 +38,6 @@ export async function register(prevState: any, formData: FormData) {
   console.log(3);
   const { email, phone_number, password, confirm_password, company_name, registration_number } = validatedFields.data;
   console.log(email, phone_number, company_name, password, confirm_password, registration_number);
-  
-  // return validatedFields.data
 
+  redirect("/");
 }

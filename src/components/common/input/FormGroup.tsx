@@ -8,12 +8,7 @@ export interface FormGroupProps {
   placeholder?: string;
   defaultValue?: string;
   errors?: {
-    company_name?: string[] | undefined;
-    email?: string[] | undefined;
-    phone_number?: string[] | undefined;
-    registration_number?: string[] | undefined;
-    password?: string[] | undefined | undefined
-    confirm_password?: string[] | undefined;
+    [key: string]: string[] | undefined;
   };
 }
 
@@ -41,10 +36,9 @@ export default function FormGroup({
         placeholder={placeholder}
         defaultValue={defaultValue}
       />
-      {errors && errors[name] && (
-        <p className="error">{errors[name]}</p>
+      {errors?.[name]?.[0] && (
+        <p className="text-red-500 text-sm mt-1">{errors[name]![0]}</p>
       )}
-      {errors && <p className="error">{}</p>}
     </div>
   );
 }

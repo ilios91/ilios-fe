@@ -1,15 +1,14 @@
 "use client";
 
-
 import AuthLogo from "@/components/auth/AuthLogo";
 import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
 import Button from "../../../components/common/buttons/Button";
 import { useActionState } from "react";
 import { register } from "@/actions/authentication/auth";
-import { InitialStateInterface } from "@/actions/authentication/interface";
+import { InitialState } from "@/actions/authentication/interface";
 
-const initialState: InitialStateInterface = {
+const initialState: InitialState = {
   company_name: "",
   email: "",
   phone_number: "",
