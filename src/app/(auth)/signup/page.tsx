@@ -2,20 +2,21 @@
 
 import AuthLogo from "@/components/auth/AuthLogo";
 import { Role } from "@/components/auth/types";
+import FormGroup from "@/components/common/input/FormGroup";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 
 export default function Signup() {
   const role = useSearchParams().get("role") as Role;
-  const Roles = useMemo<readonly Role[]>(() => ["facility", "supplier"] as const, [])
+  const Roles = useMemo<readonly Role[]>(() => ["facility", "supplier"] as const, []);
 
-  useEffect(() => {
-    if(!role || !Roles.includes(role)){
-      window.location.href = "/auth/onboarding"
-    }
-    
-  }, [role, Roles])
-  
+  if(!role || !Roles.includes(role)){
+    window.location.href = "/onboarding"
+  }
+
+  const handleChange = () => {
+    // return {}
+  }
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -29,8 +30,49 @@ export default function Signup() {
           <h4 className="text-[32px] text-black text-center leading-[39px] font-bold">Create an Account</h4>
           
           {/* input fields */}
-          <div className="flex flex-col">
-            <div></div>
+          <div className="flex flex-col gap-y-3.5">
+            <FormGroup
+              label="Company Name:"
+              value="Test"
+              placeholder="Emzor Pharm"
+              type="text"
+              onChange={handleChange}
+            />
+            <FormGroup
+              label="Company Name:"
+              value="Test"
+              placeholder="Emzor Pharm"
+              type="text"
+              onChange={handleChange}
+            />
+            <FormGroup
+              label="Company Name:"
+              value="Test"
+              placeholder="Emzor Pharm"
+              type="text"
+              onChange={handleChange}
+            />
+            <FormGroup
+              label="Company Name:"
+              value="Test"
+              placeholder="Emzor Pharm"
+              type="text"
+              onChange={handleChange}
+            />
+            <FormGroup
+              label="Company Name:"
+              value="Test"
+              placeholder="Emzor Pharm"
+              type="text"
+              onChange={handleChange}
+            />
+            <FormGroup
+              label="Company Name:"
+              value="Test"
+              placeholder="Emzor Pharm"
+              type="text"
+              onChange={handleChange}
+            />
           </div>
         </form>
       </div>
