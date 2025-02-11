@@ -7,6 +7,8 @@ import Button from "../../../components/common/buttons/Button";
 import { useActionState } from "react";
 import { register } from "@/actions/authentication/auth";
 import { InitialState } from "@/actions/authentication/interface";
+import { RoleFields } from "@/lib/constants";
+import { useSearchParams } from "next/navigation";
 
 const initialState: InitialState = {
   company_name: "",
@@ -15,10 +17,14 @@ const initialState: InitialState = {
   registration_number: "",
   password: "",
   confirm_password: "",
+  business_name: "",
 };
 
 export default function Signup() {
   const [state, action, isPending] = useActionState(register, initialState);
+  const role = useSearchParams().get("role") as "facility" | "supplier";
+
+
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -39,6 +45,19 @@ export default function Signup() {
 
           {/* input fields */}
           <div className="flex flex-col w-[90%] mx-auto gap-y-2 mt-4 ">
+            { RoleFields[role].map((field) => {
+              return(
+                <FormGroup
+                  name={field.name}
+                  id={field.name}
+                  label={field.label}
+                  type={field.type}
+                  key={field.name}
+                  placeholder={field.placeholder}
+                  defaultValue={state?.[field.name as keyof InitialState]}
+                />
+              )
+            })}
             <FormGroup
               name="company_name"
               id="company_name"
@@ -62,7 +81,7 @@ export default function Signup() {
               id="phone_number"
               label="Phone Number:"
               defaultValue={state?.phone_number}
-              placeholder="234806332222"
+              placeholder="0806332222"
               type="text"
               errors={state?.errors?.phone_number}
             />
@@ -71,7 +90,7 @@ export default function Signup() {
               id="registration_number"
               label="Registration Number:"
               defaultValue={state?.registration_number}
-              placeholder="77777777777"
+              placeholder="ADC12-DEF34-GHI56-JKL78"
               type="text"
               errors={state?.errors?.registration_number}
             />
