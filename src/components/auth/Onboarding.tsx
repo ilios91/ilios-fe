@@ -34,7 +34,7 @@ function Onboarding() {
 
   const navigateToRegistrationPage = () => {
     if(selectedRole === null) return;
-    router.push(`/signup`);
+    router.push(`/signup?role=${selectedRole}`);
   }
 
   return (
