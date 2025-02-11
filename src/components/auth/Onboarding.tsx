@@ -34,7 +34,7 @@ function Onboarding() {
 
   const navigateToRegistrationPage = () => {
     if(selectedRole === null) return;
-    router.push(`/signup`);
+    router.push(`/signup?role=${selectedRole}`);
   }
 
   return (
@@ -72,8 +72,8 @@ function Onboarding() {
           </div>
           {/* Continue Button */}
           <Button
-            handleClick={navigateToRegistrationPage}
-            disabled={selectedRole === null ? false : true } 
+            onClick={navigateToRegistrationPage}
+            disabled={selectedRole === null } 
             text="Continue" 
             className={`mt-14 mx-auto w-[518px] h-12 ${selectedRole !== null ? "bg-blue-normal" : "bg-blue-normal/40"} font-bold text-white text-[18px] rounded-lg`}
           />

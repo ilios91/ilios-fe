@@ -1,7 +1,7 @@
 import { OnboardingCardProps } from "./types";
 
 export default function OnboardingCard({ text, icon, userRole, selectedRole, handleRoleSelect }: OnboardingCardProps) {
-  
+
   return (
     <div
       onClick={handleRoleSelect} 
