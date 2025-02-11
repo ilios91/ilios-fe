@@ -16,6 +16,7 @@ export default function FormGroup({
         className="text-[#171717] text-xs font-medium leading-[21.94px]"
         htmlFor={id}
       >
+        {" "}
         {label}
       </label>
       <Input

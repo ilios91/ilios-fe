@@ -7,7 +7,6 @@ import Button from "../../../components/common/buttons/Button";
 import { useActionState } from "react";
 import { register } from "@/actions/authentication/auth";
 import { InitialState } from "@/actions/authentication/interface";
-import { RoleFields } from "@/lib/constants";
 import { useSearchParams } from "next/navigation";
 
 const initialState: InitialState = {
@@ -17,7 +16,6 @@ const initialState: InitialState = {
   registration_number: "",
   password: "",
   confirm_password: "",
-  business_name: "",
 };
 
 export default function Signup() {
@@ -45,19 +43,6 @@ export default function Signup() {
 
           {/* input fields */}
           <div className="flex flex-col w-[90%] mx-auto gap-y-2 mt-4 ">
-            { RoleFields[role].map((field) => {
-              return(
-                <FormGroup
-                  name={field.name}
-                  id={field.name}
-                  label={field.label}
-                  type={field.type}
-                  key={field.name}
-                  placeholder={field.placeholder}
-                  defaultValue={state?.[field.name as keyof InitialState]}
-                />
-              )
-            })}
             <FormGroup
               name="company_name"
               id="company_name"
