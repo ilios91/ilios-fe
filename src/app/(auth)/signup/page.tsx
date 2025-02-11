@@ -53,7 +53,7 @@ export default function Signup() {
               id="email"
               label="Email"
               defaultValue={state?.email}
-              placeholder="emzorpharm@gmail.com"
+              placeholder="pharm@gmail.com"
               type="email"
               errors={state?.errors?.email}
             />
@@ -62,7 +62,7 @@ export default function Signup() {
               id="phone_number"
               label="Phone Number:"
               defaultValue={state?.phone_number}
-              placeholder="234806332222"
+              placeholder="0806332222"
               type="text"
               errors={state?.errors?.phone_number}
             />
@@ -71,7 +71,7 @@ export default function Signup() {
               id="registration_number"
               label="Registration Number:"
               defaultValue={state?.registration_number}
-              placeholder="77777777777"
+              placeholder="BSD-1212-1WE23"
               type="text"
               errors={state?.errors?.registration_number}
             />
