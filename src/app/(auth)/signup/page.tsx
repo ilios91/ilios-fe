@@ -37,7 +37,7 @@ export default function Signup() {
           </h4>
 
           {/* input fields */}
-          <div className="flex flex-col w-[90%] mx-auto gap-y-3.5 mt-4 ">
+          <div className="flex flex-col w-[90%] mx-auto gap-y-2 mt-4 ">
             <FormGroup
               name="company_name"
               id="company_name"
@@ -45,6 +45,7 @@ export default function Signup() {
               defaultValue={state?.company_name}
               placeholder="Emzor Pharm"
               type="text"
+              errors={state?.errors?.company_name}
             />
             <FormGroup
               name="email"
@@ -53,7 +54,7 @@ export default function Signup() {
               defaultValue={state?.email}
               placeholder="emzorpharm@gmail.com"
               type="email"
-              errors={state?.errors}
+              errors={state?.errors?.email}
             />
             <FormGroup
               name="phone_number"
@@ -62,6 +63,7 @@ export default function Signup() {
               defaultValue={state?.phone_number}
               placeholder="234806332222"
               type="text"
+              errors={state?.errors?.phone_number}
             />
             <FormGroup
               name="registration_number"
@@ -70,30 +72,35 @@ export default function Signup() {
               defaultValue={state?.registration_number}
               placeholder="77777777777"
               type="text"
+              errors={state?.errors?.registration_number}
             />
+
             <FormGroup
               name="password"
               id="password"
               label="Password"
               type="password"
+              errors={state?.errors?.password}
             />
+
             <FormGroup
               name="confirm_password"
               id="confirm_password"
               label="Confirm Password:"
               type="password"
+              errors={state?.errors?.confirm_password}
             />
 
             <Button
               disabled={isPending}
-              className="mt-5 text-sm w-[518px] h-11 rounded-lg text-white bg-blue-normal"
+              className="mt-5 text-sm w-[518px] h-10 rounded-lg text-white bg-blue-normal"
               text={isPending ? "Loading..." : "Sign Up"}
             />
           </div>
 
-          <div className="mt-6 flex gap-x-1 items-center justify-center">
+          <div className="mt-6 flex gap-x-1 items-center justify-center text-xs font-semibold">
             <p className="text-center">Already have an account? </p>
-            <Link href="/login">Sign in</Link>
+            <Link className="text-blue-normal" href="/login">Sign in</Link>
           </div>
         </form>
       </div>

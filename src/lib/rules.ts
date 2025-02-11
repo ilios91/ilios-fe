@@ -31,9 +31,9 @@ export const RegisterFormSchema = z
       .trim(),
     confirm_password: z.string().trim(),
   })
-  .superRefine((value, context) => {
-    if (value.password !== value.confirm_password) {
-      context.addIssue({
+  .superRefine((val, ctx) => {
+    if (val.password !== val.confirm_password) {
+      ctx.addIssue({
         code: z.ZodIssueCode.custom, // Indicates a custom validation error
         message: "Passwords do not match", // Error message
         path: ["confirm_password"], // Specifies which field caused the error

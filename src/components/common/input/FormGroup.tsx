@@ -7,9 +7,10 @@ export interface FormGroupProps {
   id: string;
   placeholder?: string;
   defaultValue?: string;
-  errors?: {
-    [key: string]: string[] | undefined;
-  };
+  // errors?: {
+  //   [key: string]: string[] | undefined;
+  // };
+  errors?: string[] | undefined;
 }
 
 export default function FormGroup({
@@ -19,12 +20,12 @@ export default function FormGroup({
   defaultValue,
   name,
   id,
-  errors
+  errors,
 }: FormGroupProps) {
   return (
-    <div className="flex flex-col w-full gap-y-2">
+    <div className="flex flex-col w-full gap-y-1 text-xs">
       <label
-        className="text-[#171717] text-sm font-medium leading-[21.94px]"
+        className="text-[#171717] text-xs font-medium leading-[21.94px]"
         htmlFor={id}
       >
         {label}
@@ -36,8 +37,24 @@ export default function FormGroup({
         placeholder={placeholder}
         defaultValue={defaultValue}
       />
-      {errors?.[name]?.[0] && (
-        <p className="text-red-500 text-sm mt-1">{errors[name]![0]}</p>
+      {errors && (name === "password") && (
+        <div className="error">
+          <p>Password must:</p>
+          <ul className="list-disc list-inside ml-4">
+            {errors.map((err) => (
+              <li key={err}>{err}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {errors && (name === "confirm_password") && (
+        <div className="error">
+          <ul className="list-disc list-inside ml-4">
+            {errors.map((err) => (
+              <li key={err}>{err}</li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );
