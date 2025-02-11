@@ -1,17 +1,5 @@
+import { FormGroupProps } from "../type";
 import Input from "./Input";
-
-export interface FormGroupProps {
-  label: string;
-  type: string;
-  name: string;
-  id: string;
-  placeholder?: string;
-  defaultValue?: string;
-  // errors?: {
-  //   [key: string]: string[] | undefined;
-  // };
-  errors?: string[] | undefined;
-}
 
 export default function FormGroup({
   label,
@@ -37,7 +25,9 @@ export default function FormGroup({
         placeholder={placeholder}
         defaultValue={defaultValue}
       />
-      {errors && (name === "password") && (
+
+      {/* Show errors for only password and confirm password */}
+      {errors && name === "password" && (
         <div className="error">
           <p>Password must:</p>
           <ul className="list-disc list-inside ml-4">
@@ -47,7 +37,7 @@ export default function FormGroup({
           </ul>
         </div>
       )}
-      {errors && (name === "confirm_password") && (
+      {errors && name === "confirm_password" && (
         <div className="error">
           <ul className="list-disc list-inside ml-4">
             {errors.map((err) => (

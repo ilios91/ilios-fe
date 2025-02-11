@@ -32,8 +32,9 @@ export default function Signup() {
           action={action}
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
-          <h4 className="text-[28px] text-black text-center leading-[39px] font-bold">
-            Create an Account
+          <h4 className="text-2xl text-black text-center leading-[39px] font-bold">
+            {" "}
+            Create an Account{" "}
           </h4>
 
           {/* input fields */}
@@ -93,14 +94,16 @@ export default function Signup() {
 
             <Button
               disabled={isPending}
-              className="mt-5 text-sm w-[518px] h-10 rounded-lg text-white bg-blue-normal"
+              className="mt-8 text-sm w-[518px] h-10 rounded-lg text-white bg-blue-normal"
               text={isPending ? "Loading..." : "Sign Up"}
             />
           </div>
 
           <div className="mt-6 flex gap-x-1 items-center justify-center text-xs font-semibold">
             <p className="text-center">Already have an account? </p>
-            <Link className="text-blue-normal" href="/login">Sign in</Link>
+            <Link className="text-blue-normal" href="/login">
+              Sign in
+            </Link>
           </div>
         </form>
       </div>

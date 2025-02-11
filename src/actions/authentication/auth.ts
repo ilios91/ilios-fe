@@ -5,10 +5,6 @@ import { InitialState } from "./interface";
 import { redirect } from "next/navigation";
 
 export async function register(prevState: InitialState, formData: FormData) {
-
-  console.log(1);
-  console.log(prevState);
-
   const validatedFields = RegisterFormSchema.safeParse({
     company_name: formData.get("company_name"),
     email: formData.get("email"),
@@ -17,9 +13,6 @@ export async function register(prevState: InitialState, formData: FormData) {
     password: formData.get("password"),
     confirm_password: formData.get("confirm_password"),
   });
-
-  console.log(2);
-  console.log(validatedFields);
 
   if (!validatedFields.success) {
     return {
@@ -35,9 +28,8 @@ export async function register(prevState: InitialState, formData: FormData) {
   }
 
   // Extract form fields
-  console.log(3);
-  const { email, phone_number, password, confirm_password, company_name, registration_number } = validatedFields.data;
-  console.log(email, phone_number, company_name, password, confirm_password, registration_number);
+  // const { email, phone_number, password, confirm_password, company_name, registration_number } = validatedFields.data;
+  // console.log(email, phone_number, company_name, password, confirm_password, registration_number);
 
   redirect("/");
 }
