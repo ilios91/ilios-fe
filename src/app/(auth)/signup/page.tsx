@@ -6,7 +6,7 @@ import Link from "next/link";
 import Button from "../../../components/common/buttons/Button";
 import { useActionState } from "react";
 import { register } from "@/actions/authentication/auth";
-import { InitialState } from "@/actions/authentication/interface";
+import { InitialState } from "@/actions/authentication/auth.types";
 import { useSearchParams } from "next/navigation";
 
 const initialState: InitialState = {
@@ -21,8 +21,6 @@ const initialState: InitialState = {
 export default function Signup() {
   const [state, action, isPending] = useActionState(register, initialState);
   const role = useSearchParams().get("role") as "facility" | "supplier";
-
-
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">

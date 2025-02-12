@@ -32,7 +32,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div>
-          <Link href="/" className="flex items-center justify-center relative w-[72px] h-[78px]">
+          <Link href="" className="flex items-center justify-center relative w-[72px] h-[78px]">
             <Image fill={true} src={Logo} alt="Ilios" />
           </Link>
         </div>
@@ -77,7 +77,7 @@ export default function Navbar() {
 
             {/* Mobile Get started menu */}
             <div className="mt-6 md:hidden">
-              <button className="hidden text-white w-36 h-12 rounded-md bg-blue-normal font-bold text-sm md:text-[18px]  md:w-44 md:h-16 md:rounded-lg  leading-7"> Get Started </button>
+              <button className="hidden text-white w-36 h-12 rounded-md bg-blue-normal font-bold text-sm md:text-[18px]  md:w-44 md:h-16 md:rounded-lg  leading-7"> <Link href="/onboarding">Get Started</Link> </button>
             </div>
 
             {/* Login and Signup */}
@@ -90,7 +90,7 @@ export default function Navbar() {
 
         {/* Desktop Get Started Button */}
         <div className="hidden md:block">
-          <button className="w-44 h-16 rounded-lg bg-blue-normal font-bold text-[18px] text-white leading-7"> Get Started </button>
+          <button className="w-44 h-16 rounded-lg bg-blue-normal font-bold text-[18px] text-white leading-7"> <Link href="/onboarding">Get Started</Link> </button>
         </div>
       </div>
     </header>

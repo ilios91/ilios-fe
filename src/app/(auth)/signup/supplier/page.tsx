@@ -5,7 +5,7 @@ import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
 import { useActionState } from "react";
 import { registerSupplier } from "@/actions/authentication/auth";
-import { SupplierInterface } from "@/actions/authentication/interface";
+import { SupplierInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
 
 const initialState: SupplierInterface = {
@@ -18,7 +18,10 @@ const initialState: SupplierInterface = {
 };
 
 export default function SupplierSignup() {
-  const [state, action, isPending] = useActionState(registerSupplier, initialState);
+  const [state, action, isPending] = useActionState(
+    registerSupplier,
+    initialState
+  );
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">

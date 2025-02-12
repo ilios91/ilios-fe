@@ -1,3 +1,21 @@
+ <div className="bg-blue-normal/70 w-1/2 h-full flex rounded-2xl">
+
+      {/* Image Container */}
+        <div className="flex flex-col mx-auto md:w-[90%] tablet:w-[85%]">
+          <div>
+            <AuthLogo />
+          </div>
+          <div className="w-full">
+            <h2 className="text-[#FAFAFA] text-3xl text-center">{"Let’s Get you started with Ilios"}</h2>
+          </div>
+          <div className="flex flex-1 h-full">
+            <SignupImage className="w-full h-full"/>
+            {/* <SignupImage className="w-[631px] h-[64px]"/> */}
+          </div>
+        </div>
+      </div>
+
+
 src/
 ├── app/
 │   ├── (auth)/

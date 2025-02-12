@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroImage from "@/assets/images/hero.svg";
+import Link from "next/link";
 // import styles from "@/components/styles/hero.module.scss";
 
 export default function Hero() {
@@ -27,7 +28,9 @@ export default function Hero() {
           Find reliable suppliers, place orders, and ensure delivery with trusted logistics partners.
         </p>
         <div className="mt-6 md:mt-14 tablet:mt-24">
-          <button className="text-base w-[170px] sm:h-11 sm:w-[150px] h-10 md:w-[274px] md:h-14 text-blue-normal bg-white font-bold md:text-[20px] leading-6 rounded-lg"> Get started </button>
+          <button className="text-base w-[170px] sm:h-11 sm:w-[150px] h-10 md:w-[274px] md:h-14 text-blue-normal bg-white font-bold md:text-[20px] leading-6 rounded-lg"> 
+            <Link href="/onboarding">Get started</Link>  
+          </button>
         </div>
       </div>
     </section>

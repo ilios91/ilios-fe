@@ -2,9 +2,12 @@
 
 import { FacilityRegisterFormSchema } from "@/lib/rules";
 import { redirect } from "next/navigation";
-import { FacilityInterface, SupplierInterface } from "./interface";
+import { FacilityInterface, SupplierInterface } from "./auth.types";
 
-export async function registerFacility(prevState: FacilityInterface, formData: FormData) {
+export async function registerFacility(
+  prevState: FacilityInterface,
+  formData: FormData
+) {
   const validatedFields = FacilityRegisterFormSchema.safeParse({
     company_name: formData.get("company_name"),
     email: formData.get("email"),
@@ -33,7 +36,10 @@ export async function registerFacility(prevState: FacilityInterface, formData: F
   redirect("/");
 }
 
-export async function registerSupplier(prevState: SupplierInterface, formData: FormData) {
+export async function registerSupplier(
+  prevState: SupplierInterface,
+  formData: FormData
+) {
   const validatedFields = FacilityRegisterFormSchema.safeParse({
     business_name: formData.get("business_name"),
     email: formData.get("email"),
