@@ -7,6 +7,8 @@ import { useActionState } from "react";
 import { registerSupplier } from "@/actions/authentication/auth";
 import { SupplierInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
+import SignupImage from "@/components/icons/SignupImage";
+import File from "@/components/common/input/File";
 
 const initialState: SupplierInterface = {
   business_name: "",
@@ -25,9 +27,16 @@ export default function SupplierSignup() {
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
-      <div className="bg-blue-normal/70 w-1/2 h-full flex rounded-2xl">
-        <div className="flex mx-auto md:w-[90%] tablet:w-[85%]">
+      <div className="bg-[#428BF8] w-1/2 h-full flex rounded-r-2xl">
+        {/* Image Container */}
+        <div className="flex flex-col h-full w-[90%] mx-auto py-4 gap-y-3.5">
           <AuthLogo />
+          <h2 className="text-[#FAFAFA] text-3xl text-center font-bold leading-[43px] w-[60%] mx-auto">
+            {"Let's Get you started with Ilios"}
+          </h2>
+          <div className="relative flex-1 flex w-full h-[430px]">
+            <SignupImage className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
@@ -72,9 +81,9 @@ export default function SupplierSignup() {
             <FormGroup
               name="address"
               id="address"
-              label="Registration Number:"
+              label="Address:"
               defaultValue={state?.address}
-              placeholder="ADC12-DEF34-GHI56-JKL78"
+              placeholder="12, McCarthy Street, Ibadan, Nigeria"
               type="text"
               errors={state?.errors?.address}
             />
@@ -92,6 +101,14 @@ export default function SupplierSignup() {
               id="confirm_password"
               label="Confirm Password:"
               type="password"
+              errors={state?.errors?.confirm_password}
+            />
+
+            <File
+              name="confirm_password"
+              id="confirm_password"
+              label="Confirm Password:"
+              type="file"
               errors={state?.errors?.confirm_password}
             />
 

@@ -2,8 +2,6 @@ export default function SignupImage({ className }: { className: string }) {
   return (
     <svg
       className={className}
-      // width="601"
-      // height="602"
       viewBox="0 0 631 642"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
