@@ -3,7 +3,9 @@
 import UploadIcon from '../../../components/icons/UploadFile';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { UploadError } from '@/utils/types';
+import { validateFile } from '@/utils/Functions';
 
 interface FileData {
   name: string;
@@ -12,18 +14,6 @@ interface FileData {
   content: string | ArrayBuffer | null | undefined;
   lastModified: number;
 }
-
-interface UploadError {
-  message: string;
-  type: 'size' | 'type' | 'general';
-}
-
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const ALLOWED_FILE_TYPES = [
-  'application/pdf',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-];
 
 
 export default function UploadFile() {
@@ -34,24 +24,6 @@ export default function UploadFile() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const router = useRouter()
-
-  const validateFile = (file: File): UploadError | null => {
-    if (file.size > MAX_FILE_SIZE) {
-      return {
-        type: 'size',
-        message: 'File size exceeds 5MB limit'
-      };
-    }
-
-    if (!ALLOWED_FILE_TYPES.includes(file.type)) {
-      return {
-        type: 'type',
-        message: 'Only PDF and Word documents are allowed'
-      };
-    }
-
-    return null;
-  };
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -117,7 +89,6 @@ export default function UploadFile() {
     catch (err) {
       setError({ type: 'general', message: 'Failed to save file. Please try again.' });
     } 
-
     finally {
       setIsUploading(false);
     }
