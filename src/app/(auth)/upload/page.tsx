@@ -91,7 +91,6 @@ export default function UploadFile() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    alert(1)
     
     if (!title.trim()) {
       setError({ type: 'general', message: 'Please enter a title' });
@@ -109,7 +108,6 @@ export default function UploadFile() {
       window.localStorage.setItem("license", JSON.stringify({ ...fileData, title }));
       setIsSuccess(true);
       setError(null);
-      alert(2)
     } 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     catch (err) {
@@ -118,7 +116,6 @@ export default function UploadFile() {
 
     finally {
       setIsUploading(false);
-      alert(3)
     }
   };
 
@@ -183,6 +180,14 @@ export default function UploadFile() {
                 <AlertDescription>{error.message}</AlertDescription>
               </Alert>
             )} */}
+
+            {/* {isSuccess && (
+              <Alert className="bg-green-50 text-green-800 border-green-200">
+                <CheckCircle2 className="h-4 w-4" />
+                <AlertDescription>Document uploaded successfully!</AlertDescription>
+              </Alert>
+            )} */}
+
 
             <button
               type="submit"
