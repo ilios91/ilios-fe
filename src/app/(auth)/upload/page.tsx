@@ -3,6 +3,7 @@
 import UploadIcon from '../../../components/icons/UploadFile';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { redirect, useRouter } from 'next/navigation';
 
 interface FileData {
   name: string;
@@ -31,6 +32,8 @@ export default function UploadFile() {
   const [error, setError] = useState<UploadError | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const router = useRouter()
 
   const validateFile = (file: File): UploadError | null => {
     if (file.size > MAX_FILE_SIZE) {
@@ -108,6 +111,7 @@ export default function UploadFile() {
       window.localStorage.setItem("license", JSON.stringify({ ...fileData, title }));
       setIsSuccess(true);
       setError(null);
+      router.push('/signup/supplier');
     } 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     catch (err) {
