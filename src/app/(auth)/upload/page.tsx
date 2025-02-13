@@ -91,6 +91,7 @@ export default function UploadFile() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    alert(1)
     
     if (!title.trim()) {
       setError({ type: 'general', message: 'Please enter a title' });
@@ -108,6 +109,7 @@ export default function UploadFile() {
       window.localStorage.setItem("license", JSON.stringify({ ...fileData, title }));
       setIsSuccess(true);
       setError(null);
+      alert(2)
     } 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     catch (err) {
@@ -116,6 +118,7 @@ export default function UploadFile() {
 
     finally {
       setIsUploading(false);
+      alert(3)
     }
   };
 
@@ -131,19 +134,56 @@ export default function UploadFile() {
             <label htmlFor="title" className="font-medium text-sm text-[#171717]">Title</label>
             <input onChange={handleTitleChange} className="h-10 w-full border-none outline-none px-2 text-xs" type="text" placeholder="PCN license" />
 
-            <label htmlFor='license' className="cursor-pointer flex flex-col items-center justify-center mt-12 w-full h-[200px] border-[#BABABA] border-2 border-dotted text-xs text-center">
-              <UploadIcon size="lg" />
-              <p className='flex flex-col gap-y-1 mt-6'>
-                <span>Drag and Drop here</span>
-                <span>or</span>
-                <span className='text-blue-normal'>
-                  Browse file
-                  <input onChange={uploadLicense} name='license' accept=".doc,.pdf,.docx" className='hidden cursor-pointer' id='license' type="file" />
-                </span>
-              </p>
-            </label>
+            <div className='mt-10'>
+              <label
+                htmlFor="license"
+                className={`
+                  cursor-pointer flex flex-col items-center justify-center
+                  h-[200px] border-2 border-dashed rounded-lg
+                  ${fileData ? 'border-green-500 bg-green-50' : 'border-gray-300 hover:border-gray-400'}
+                  transition-colors duration-200
+                `}
+              >
+                <div className="space-y-4 text-center flex flex-col items-center">
+                  {fileData ? (
+                    <>
+                      <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
+                      <div className="text-sm text-gray-600">
+                        <p className="font-medium">{fileData.name}</p>
+                        <p>{(fileData.size / 1024).toFixed(1)} KB</p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <UploadIcon size="lg" />
+                      <div className="flex flex-col gap-y-1 mt-6 text-xs text-center">
+                        <p>Drag and drop here</p>
+                        <p>or</p>
+                        <p className="text-blue-normal font-bold">Browse file</p>
+                      </div>
+                    </>
+                  )}
+                  <input
+                    onChange={uploadLicense}
+                    name="license"
+                    accept=".doc,.docx,.pdf"
+                    className="hidden"
+                    id="license"
+                    type="file"
+                  />
+                </div>
+              </label>
 
-            <p className="mt-2 text-xs text-[#6E6E6E]">Accepted file type:- Doc or Pdf</p>
+              <p className="mt-2 text-xs text-[#6E6E6E]">Accepted file type:- Doc, Docx, Pdf (max 5MB)</p>
+            </div>
+
+            {/* {error && (
+              <Alert variant="destructive">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>{error.message}</AlertDescription>
+              </Alert>
+            )} */}
+
             <button
               type="submit"
               disabled={isUploading || !fileData}
