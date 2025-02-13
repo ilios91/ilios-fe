@@ -67,3 +67,10 @@ export async function registerSupplier(
 
   redirect("/");
 }
+
+
+export async function uploadLicense(prevState: any, formData: FormData){
+  const license = formData.get("license");
+ 
+  return { ...prevState, license }
+}
