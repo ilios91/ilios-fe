@@ -69,8 +69,3 @@ export async function registerSupplier(
 }
 
 
-export async function uploadLicense(prevState: any, formData: FormData){
-  const license = formData.get("license");
- 
-  return { ...prevState, license }
-}

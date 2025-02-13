@@ -1,6 +1,6 @@
 import { FormGroupProps } from "../type";
 import Input from "./Input";
-import UploadIcon from '../../icons/UploadIcon';
+import UploadIcon from '../../icons/UploadFile';
 
 export default function FormGroup({
   label,
