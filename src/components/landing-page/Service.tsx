@@ -4,6 +4,7 @@ import Image from "next/image";
 import serviceImage1 from "@/assets/images/service-image-1.svg";
 import serviceImage2 from "@/assets/images/service-image-2.svg";
 import useWindowSize from "../../hooks/useWindowSize";
+import Link from "next/link";
 
 export default function Service() {
 const { screenWidth } = useWindowSize();
@@ -32,7 +33,7 @@ const { screenWidth } = useWindowSize();
               </p>
               <button 
                 className={`font-bold leading-[24.38px] ${screenWidth < 768 && 'w-[136px] h-10 mt-4'} text-base md:text-[20px] md:w-[304px] rounded-lg bg-white text-blue-normal md:h-16 md:mt-[52px]`}>
-                <span className="block md:hidden">Join us</span> <span className="hidden md:block">Sign up as a Supplier</span>
+                <span className="block md:hidden">Join us</span> <span className="hidden md:block"><Link href="/signup/supplier">Sign up as a Supplier</Link></span>
               </button>
             </div>
           </div>
@@ -71,7 +72,7 @@ const { screenWidth } = useWindowSize();
               </p>
               <button 
                 className={`font-bold leading-[24.38px] ${screenWidth < 768 && 'w-[136px] h-10 mt-4'} text-base md:text-[20px] md:w-[304px] rounded-lg bg-white text-blue-normal md:h-16 md:mt-[52px]`}>
-                <span className="block md:hidden">Join us</span> <span className="hidden md:block">Sign up as a Buyer</span>
+                <span className="block md:hidden">Join us</span> <span className="hidden md:block"><Link href="/signup/facility">Sign up as a Buyer</Link></span>
               </button>
             </div>
           </div>
