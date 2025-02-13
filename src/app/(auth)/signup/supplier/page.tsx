@@ -8,7 +8,6 @@ import { registerSupplier } from "@/actions/authentication/auth";
 import { SupplierInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
 import SignupImage from "@/components/icons/SignupImage";
-import File from "@/components/common/input/File";
 
 const initialState: SupplierInterface = {
   business_name: "",
@@ -87,7 +86,13 @@ export default function SupplierSignup() {
               type="text"
               errors={state?.errors?.address}
             />
-
+            <FormGroup
+              name="certification"
+              id="certification"
+              label="Certification:"
+              type="file"
+              // errors={state?.errors?.confirm_password}
+            />
             <FormGroup
               name="password"
               id="password"
@@ -95,7 +100,6 @@ export default function SupplierSignup() {
               type="password"
               errors={state?.errors?.password}
             />
-
             <FormGroup
               name="confirm_password"
               id="confirm_password"
@@ -103,15 +107,6 @@ export default function SupplierSignup() {
               type="password"
               errors={state?.errors?.confirm_password}
             />
-
-            <File
-              name="confirm_password"
-              id="confirm_password"
-              label="Confirm Password:"
-              type="file"
-              errors={state?.errors?.confirm_password}
-            />
-
             <Button
               disabled={isPending}
               className="mt-8 text-sm w-[518px] h-10 rounded-lg text-white bg-blue-normal"
