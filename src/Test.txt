@@ -1,19 +1,36 @@
- <div className="bg-blue-normal/70 w-1/2 h-full flex rounded-2xl">
+return (
+    <div className="h-[100vh] max-h-[100vh] w-full bg-white flex items-center justify-center">
+      <div className="max-w-[518px] w-[518px] max-h-[664px] bg-[#EDF3FC] border-[1px] rounded-lg">
+        <header className="mt-8 border-b-[1px] border-[#BABABA] pb-2"> 
+          <h2 className="font-bold text-[28px] w-[80%] mx-auto">Add Document</h2>
+        </header>
 
-      {/* Image Container */}
-        <div className="flex flex-col mx-auto md:w-[90%] tablet:w-[85%]">
-          <div>
-            <AuthLogo />
-          </div>
-          <div className="w-full">
-            <h2 className="text-[#FAFAFA] text-3xl text-center">{"Let’s Get you started with Ilios"}</h2>
-          </div>
-          <div className="flex flex-1 h-full">
-            <SignupImage className="w-full h-full"/>
-            {/* <SignupImage className="w-[631px] h-[64px]"/> */}
-          </div>
+        <div className="w-[80%] mt-9 mx-auto">
+          <form onSubmit={handleSubmit }>
+            <label htmlFor="title" className="font-medium text-sm text-[#171717]">Title</label>
+            <input onChange={handleTitleChange} className="h-10 w-full border-none outline-none px-2 text-xs" type="text" placeholder="PCN license" />
+
+            <label htmlFor='license' className="cursor-pointer flex flex-col items-center justify-center mt-12 w-full h-[200px] border-[#BABABA] border-2 border-dotted text-xs text-center">
+              <UploadIcon size="lg" />
+              <p className='flex flex-col gap-y-1 mt-6'>
+                <span>Drag and Drop here</span>
+                <span>or</span>
+                <span className='text-blue-normal'>
+                  Browse file
+                  <input onChange={uploadLicense} name='license' accept=".doc,.pdf,.docx" className='hidden cursor-pointer' id='license' type="file" />
+                </span>
+              </p>
+            </label>
+
+            <p className="mt-2 text-xs text-[#6E6E6E]">Accepted file type:- Doc or Pdf</p>
+            <button className='w-full h-10 rounded-lg my-10 bg-blue-normal text-white text-sm font-bold' disabled={false}>Upload</button>
+
+            {/* <Button className='w-full h-10 rounded-lg my-10 bg-blue-normal text-white text-sm font-bold' text='Upload' disabled={false}/> */}
+          </form>
         </div>
       </div>
+    </div>
+  );
 
 
 src/

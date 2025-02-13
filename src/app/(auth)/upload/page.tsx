@@ -2,6 +2,7 @@
 
 import UploadIcon from '../../../components/icons/UploadFile';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 
 interface FileData {
   name: string;
@@ -137,10 +138,10 @@ export default function UploadFile() {
     <div className="h-[100vh] max-h-[100vh] w-full bg-white flex items-center justify-center">
       <div className="max-w-[518px] w-[518px] max-h-[664px] bg-[#EDF3FC] border-[1px] rounded-lg">
         <header className="mt-8 border-b-[1px] border-[#BABABA] pb-2"> 
-          <h2 className="font-bold text-[28px] w-[80%] mx-auto">Add Document</h2>
+          <h2 className="font-bold text-[28px] w-[85%] mx-auto">Add Document</h2>
         </header>
 
-        <div className="w-[80%] mt-9 mx-auto">
+        <div className="w-[85%] mt-9 mx-auto">
           <form onSubmit={handleSubmit }>
             <label htmlFor="title" className="font-medium text-sm text-[#171717]">Title</label>
             <input onChange={handleTitleChange} className="h-10 w-full border-none outline-none px-2 text-xs" type="text" placeholder="PCN license" />
