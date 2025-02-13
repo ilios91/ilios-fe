@@ -65,7 +65,7 @@ export default function FormGroup({
         <div className="flex w-full">
           <input accept="image/*" name={name} id={id} className="bg-red-500 w-full cursor-default hidden" type="file" />
           <div className="flex- bg-blue-600 ml-auto">
-            <UploadIcon />
+            <UploadIcon size="sm" />
           </div>
         </div>
       </label>
