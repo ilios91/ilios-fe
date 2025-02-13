@@ -83,10 +83,7 @@ export default function UploadFile() {
     };
 
     reader.onerror = () => {
-      setError({
-        type: 'general',
-        message: 'Error reading file. Please try again.'
-      });
+      setError({ type: 'general', message: 'Error reading file. Please try again.'  });
     };
 
     reader.readAsDataURL(file);
@@ -96,40 +93,28 @@ export default function UploadFile() {
     e.preventDefault();
     
     if (!title.trim()) {
-      setError({
-        type: 'general',
-        message: 'Please enter a title'
-      });
+      setError({ type: 'general', message: 'Please enter a title' });
       return;
     }
 
     if (!fileData) {
-      setError({
-        type: 'general',
-        message: 'Please select a file'
-      });
+      setError({ type: 'general', message: 'Please select a file' });
       return;
     }
 
     try {
       setIsUploading(true);
-      // Simulate upload delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      window.localStorage.setItem("license", JSON.stringify({
-        ...fileData,
-        title
-      }));
-      
+      await new Promise(resolve => setTimeout(resolve, 1000));  // Simulate upload delay
+      window.localStorage.setItem("license", JSON.stringify({ ...fileData, title }));
       setIsSuccess(true);
       setError(null);
+    } 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (err) {
-      setError({
-        type: 'general',
-        message: 'Failed to save file. Please try again.'
-      });
-    } finally {
+    catch (err) {
+      setError({ type: 'general', message: 'Failed to save file. Please try again.' });
+    } 
+
+    finally {
       setIsUploading(false);
     }
   };
@@ -159,9 +144,23 @@ export default function UploadFile() {
             </label>
 
             <p className="mt-2 text-xs text-[#6E6E6E]">Accepted file type:- Doc or Pdf</p>
-            <button className='w-full h-10 rounded-lg my-10 bg-blue-normal text-white text-sm font-bold' disabled={false}>Upload</button>
+            <button
+              type="submit"
+              disabled={isUploading || !fileData}
+              className={`
+                my-10 w-full h-10 rounded-lg font-medium text-white transition-colors duration-200
+                ${ isUploading || !fileData  ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700' }
+              `}
+            >
+              { isUploading ? (
+                <span className="flex items-center justify-center">
+                  <Loader2 className="animate-spin -ml-1 mr-2 h-4 w-4" /> Uploading...
+                </span>
+              ) : (
+                'Upload'
+              )}
+            </button>
 
-            {/* <Button className='w-full h-10 rounded-lg my-10 bg-blue-normal text-white text-sm font-bold' text='Upload' disabled={false}/> */}
           </form>
         </div>
       </div>
