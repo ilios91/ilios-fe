@@ -33,19 +33,19 @@ export default function Login() {
           action={action}
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
-          <h4 className="text-2xl text-black text-center leading-[39px] font-bold">
+          <h4 className="text-2xl text-black text-center leading-[39px] font-bold mb-6">
             Log in to your account
           </h4>
 
-          <h1 className="text-blue-normal font-medium text-[40px] text-center">
+          <h1 className="text-blue-normal font-medium text-[32px] text-center">
             Welcome back to Ilios!
           </h1>
-          <h6 className="text-[20px] text-[#171717] text-center mx-auto max-w-[470px]">
+          <h6 className="text-base text-[#171717] text-center mx-auto max-w-[470px]">
             Thank you for trusting us! Enter your login details below
           </h6>
 
           {/* input fields */}
-          <div className="flex flex-col w-[90%] mx-auto gap-y-2 mt-4 ">
+          <div className="flex flex-col w-[90%] mx-auto gap-y-2 mt-8">
             <FormGroup
               name="email"
               id="email"
@@ -82,26 +82,20 @@ export default function Login() {
               text={isPending ? "Loading..." : "Sign Up"}
             />
 
-            <p className="text-black text-xs max-w-[496px] text-center mx-auto">
+            <p className="text-black text-xs max-w-[496px] text-center mx-auto mt-6" >
               Two-Factor Authentication is enabled for this account. After
               logging in, you’ll be prompted to enter your 2FA code.
             </p>
 
-            <hr className="border-[#BABABA] border-[1px] w-full" />
+            <hr className="border-[#BABABA] border-[1px] w-full my-8" />
 
-            <p className="text-xs text=black leading-4">
+            <p className="text-xs text=black leading-4 max-w-[403px] mx-auto text-center">
               Want to add an extra layer of security?{" "}
               <Link className="text-blue-normal" href="/"> Enable Two-Factor Authentication </Link>in your
               account settings.
             </p>
           </div>
 
-          <div className="mt-6 flex gap-x-1 items-center justify-center text-xs font-semibold">
-            <p className="text-center">Already have an account? </p>
-            <Link className="text-blue-normal" href="/login">
-              Login
-            </Link>
-          </div>
         </form>
       </div>
     </main>
