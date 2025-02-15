@@ -26,6 +26,8 @@ export interface SupplierInterface extends BaseState{
   address: string
 }
 
+export type LoginInterface = Pick<BaseState, "email" | "password" | "errors">;
+
 
 
 

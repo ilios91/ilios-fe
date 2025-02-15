@@ -54,6 +54,29 @@ export default function FormGroup({
     );
   }
 
+  else if( type === "checkbox"){
+    return (
+      <div className="flex items-center gap-x-2">
+        <input
+          id={id}
+          name={name}
+          type="checkbox"
+          defaultValue={defaultValue}
+        />
+        <label
+          className="text-[#171717] text-xs font-medium leading-[21.94px]"
+          htmlFor={id}
+        >
+          {" "}
+          {label}
+        </label>
+      </div>
+    );
+
+  }
+
+  
+
   // File Inputs
   return (
     <div className="flex flex-col w-full gap-y-1 text-xs">

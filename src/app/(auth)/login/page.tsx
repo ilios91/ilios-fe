@@ -4,25 +4,15 @@ import AuthLogo from "@/components/auth/AuthLogo";
 import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
 import { useActionState } from "react";
-import { registerSupplier } from "@/actions/authentication/auth";
-import { SupplierInterface } from "@/actions/authentication/auth.types";
+import { LoginInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
 import SignupImage from "@/components/icons/SignupImage";
+import { login } from "@/actions/authentication/auth";
 
-const initialState: SupplierInterface = {
-  business_name: "",
-  email: "",
-  phone_number: "",
-  address: "",
-  password: "",
-  confirm_password: "",
-};
+const initialState: LoginInterface = { email: "", password: "" };
 
 export default function Login() {
-  const [state, action, isPending] = useActionState(
-    registerSupplier,
-    initialState
-  );
+  const [state, action, isPending] = useActionState(login, initialState);
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -44,21 +34,18 @@ export default function Login() {
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
           <h4 className="text-2xl text-black text-center leading-[39px] font-bold">
-            {" "}
-            Create an Account{" "}
+            Log in to your account
           </h4>
+
+          <h1 className="text-blue-normal font-medium text-[40px] text-center">
+            Welcome back to Ilios!
+          </h1>
+          <h6 className="text-[20px] text-[#171717] text-center mx-auto max-w-[470px]">
+            Thank you for trusting us! Enter your login details below
+          </h6>
 
           {/* input fields */}
           <div className="flex flex-col w-[90%] mx-auto gap-y-2 mt-4 ">
-            <FormGroup
-              name="business_name"
-              id="business_name"
-              label="Business Name:"
-              defaultValue={state?.business_name}
-              placeholder="Emzor Pharm"
-              type="text"
-              errors={state?.errors?.business_name}
-            />
             <FormGroup
               name="email"
               id="email"
@@ -66,58 +53,53 @@ export default function Login() {
               defaultValue={state?.email}
               placeholder="emzorpharm@gmail.com"
               type="email"
-              errors={state?.errors?.email}
-            />
-            <FormGroup
-              name="phone_number"
-              id="phone_number"
-              label="Phone Number:"
-              defaultValue={state?.phone_number}
-              placeholder="0806332222"
-              type="text"
-              errors={state?.errors?.phone_number}
-            />
-            <FormGroup
-              name="address"
-              id="address"
-              label="Address:"
-              defaultValue={state?.address}
-              placeholder="12, McCarthy Street, Ibadan, Nigeria"
-              type="text"
-              errors={state?.errors?.address}
-            />
-            <FormGroup
-              name="certification"
-              id="certification"
-              label="Certification:"
-              type="file"
-              // errors={state?.errors?.confirm_password}
             />
             <FormGroup
               name="password"
               id="password"
               label="Password"
               type="password"
-              errors={state?.errors?.password}
             />
-            <FormGroup
-              name="confirm_password"
-              id="confirm_password"
-              label="Confirm Password:"
-              type="password"
-              errors={state?.errors?.confirm_password}
-            />
+
+            <div className="flex items-center justify-between w-full">
+              <FormGroup
+                label="Remember me"
+                type="checkbox"
+                name="remember_me"
+                id="remember_me"
+              />
+              <Link
+                className="text-xs underline decoration-black decoration-solid decoration-1"
+                href="/"
+              >
+                Forgot Password
+              </Link>
+            </div>
+
             <Button
               disabled={isPending}
-              className="mt-8 text-sm w-[518px] h-10 rounded-lg text-white bg-blue-normal"
+              className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal"
               text={isPending ? "Loading..." : "Sign Up"}
             />
+
+            <p className="text-black text-xs max-w-[496px] text-center mx-auto">
+              Two-Factor Authentication is enabled for this account. After
+              logging in, you’ll be prompted to enter your 2FA code.
+            </p>
+
+            <hr className="border-[#BABABA] border-[1px] w-full" />
+
+            <p className="text-xs text=black leading-4">
+              Want to add an extra layer of security?{" "}
+              <Link className="text-blue-normal" href="/"> Enable Two-Factor Authentication </Link>in your
+              account settings.
+            </p>
           </div>
 
           <div className="mt-6 flex gap-x-1 items-center justify-center text-xs font-semibold">
             <p className="text-center">Already have an account? </p>
             <Link className="text-blue-normal" href="/login">
-              Sign in
+              Login
             </Link>
           </div>
         </form>

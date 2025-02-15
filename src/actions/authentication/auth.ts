@@ -1,8 +1,8 @@
 "use server";
 
-import { FacilityRegisterFormSchema } from "@/lib/rules";
+import { FacilityRegisterFormSchema, LoginFormSchema } from "@/lib/rules";
 import { redirect } from "next/navigation";
-import { FacilityInterface, SupplierInterface } from "./auth.types";
+import { FacilityInterface, LoginInterface, SupplierInterface } from "./auth.types";
 
 export async function registerFacility(
   prevState: FacilityInterface,
@@ -68,4 +68,20 @@ export async function registerSupplier(
   redirect("/");
 }
 
+export async function login(prevState: LoginInterface, formData: FormData) {
+  const validatedFields = LoginFormSchema.safeParse({
+    email: formData.get("email"),
+    password: formData.get("password"),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+    };
+  }
+
+  redirect("/");
+}
 
