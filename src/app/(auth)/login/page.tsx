@@ -3,16 +3,22 @@
 import AuthLogo from "@/components/auth/AuthLogo";
 import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { LoginInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
 import SignupImage from "@/components/icons/SignupImage";
 import { login } from "@/actions/authentication/auth";
+import { Modal } from "@/components/ui/modals/Modal";
 
 const initialState: LoginInterface = { email: "", password: "" };
 
 export default function Login() {
+  const [openModal, setOpenModal] = useState(false);
   const [state, action, isPending] = useActionState(login, initialState);
+
+  const handleOpenChange = () => {
+    setOpenModal(true);
+  };
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -30,7 +36,8 @@ export default function Login() {
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
         <form
-          action={action}
+          // action={action}
+          onSubmit={handleOpenChange}
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
           <h4 className="text-2xl text-black text-center leading-[39px] font-bold mb-6">
@@ -79,10 +86,10 @@ export default function Login() {
             <Button
               disabled={isPending}
               className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal"
-              text={isPending ? "Loading..." : "Sign Up"}
+              text={isPending ? "Loading..." : "Log in"}
             />
 
-            <p className="text-black text-xs max-w-[496px] text-center mx-auto mt-6" >
+            <p className="text-black text-xs max-w-[496px] text-center mx-auto mt-6">
               Two-Factor Authentication is enabled for this account. After
               logging in, you’ll be prompted to enter your 2FA code.
             </p>
@@ -91,13 +98,17 @@ export default function Login() {
 
             <p className="text-xs text=black leading-4 max-w-[403px] mx-auto text-center">
               Want to add an extra layer of security?{" "}
-              <Link className="text-blue-normal" href="/"> Enable Two-Factor Authentication </Link>in your
-              account settings.
+              <Link className="text-blue-normal" href="/">
+                {" "}
+                Enable Two-Factor Authentication{" "}
+              </Link>
+              in your account settings.
             </p>
           </div>
-
         </form>
       </div>
+
+      <Modal openModal={openModal}/>
     </main>
   );
 }
