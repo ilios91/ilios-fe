@@ -3,22 +3,22 @@
 import AuthLogo from "@/components/auth/AuthLogo";
 import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import { LoginInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
 import SignupImage from "@/components/icons/SignupImage";
 import { login } from "@/actions/authentication/auth";
-import { Modal } from "@/components/ui/modals/Modal";
+// import { Modal } from "@/components/ui/modals/Modal";
 
 const initialState: LoginInterface = { email: "", password: "" };
 
 export default function Login() {
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(true);
   const [state, action, isPending] = useActionState(login, initialState);
 
-  const handleOpenChange = () => {
-    setOpenModal(true);
-  };
+  // const handleOpenChange = () => {
+  //   setOpenModal(true);
+  // };
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -36,8 +36,7 @@ export default function Login() {
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
         <form
-          // action={action}
-          onSubmit={handleOpenChange}
+          action={action}
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
           <h4 className="text-2xl text-black text-center leading-[39px] font-bold mb-6">
@@ -108,7 +107,7 @@ export default function Login() {
         </form>
       </div>
 
-      <Modal openModal={openModal}/>
+      {/* <Modal openModal={openModal}/> */}
     </main>
   );
 }

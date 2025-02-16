@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Button } from "../button";
 import {
   Dialog,
@@ -12,21 +12,27 @@ import {
 } from "../dialog";
 import { Input } from "../input";
 import { Label } from "../label";
+import { useState } from "react";
 
 interface ModalProps {
   openModal: boolean;
 }
 
-export function Modal({ openModal }:  ModalProps) {
-  const router = useRouter();
+export function Modal({ openModal }: ModalProps) {
+  const [isOpen, setIsOpen] = useState(openModal);
+  // const router = useRouter();
 
   const handleOpenChange = () => {
-    router.back();
+    // router.back();
+    setIsOpen(false);
   };
 
-
   return (
-    <Dialog defaultOpen={openModal} open={openModal} onOpenChange={handleOpenChange}>
+    <Dialog
+      defaultOpen={openModal}
+      open={isOpen}
+      onOpenChange={handleOpenChange}
+    >
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
