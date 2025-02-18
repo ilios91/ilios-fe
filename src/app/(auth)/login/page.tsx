@@ -3,22 +3,21 @@
 import AuthLogo from "@/components/auth/AuthLogo";
 import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
-import { useActionState } from "react";
-import { LoginInterface } from "@/actions/authentication/auth.types";
-import Button from "@/components/common/buttons/Button";
+// import { useActionState } from "react";
+// import { LoginInterface } from "@/actions/authentication/auth.types";
 import SignupImage from "@/components/icons/SignupImage";
-import { login } from "@/actions/authentication/auth";
-// import { Modal } from "@/components/ui/modals/Modal";
+// import { login } from "@/actions/authentication/auth";
+import { useRouter } from "next/navigation";
 
-const initialState: LoginInterface = { email: "", password: "" };
+// const initialState: LoginInterface = { email: "", password: "" };
 
 export default function Login() {
-  // const [openModal, setOpenModal] = useState(true);
-  const [state, action, isPending] = useActionState(login, initialState);
+  // const [state, action, isPending] = useActionState(login, initialState);
+  const router = useRouter();
 
-  // const handleOpenChange = () => {
-  //   setOpenModal(true);
-  // };
+  const handleSubmit = () => {
+    router.push("/2fa");
+  };
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -36,7 +35,7 @@ export default function Login() {
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
         <form
-          action={action}
+          onSubmit={handleSubmit}
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
           <h4 className="text-2xl text-black text-center leading-[39px] font-bold mb-6">
@@ -56,7 +55,7 @@ export default function Login() {
               name="email"
               id="email"
               label="Email"
-              defaultValue={state?.email}
+              // defaultValue={state?.email}
               placeholder="emzorpharm@gmail.com"
               type="email"
             />
@@ -82,11 +81,7 @@ export default function Login() {
               </Link>
             </div>
 
-            <Button
-              disabled={isPending}
-              className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal"
-              text={isPending ? "Loading..." : "Log in"}
-            />
+            <button type="submit" className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal">Log in</button>
 
             <p className="text-black text-xs max-w-[496px] text-center mx-auto mt-6">
               Two-Factor Authentication is enabled for this account. After
@@ -106,8 +101,6 @@ export default function Login() {
           </div>
         </form>
       </div>
-
-      {/* <Modal openModal={openModal}/> */}
     </main>
   );
 }
