@@ -8,6 +8,7 @@ import Link from "next/link";
 import SignupImage from "@/components/icons/SignupImage";
 // import { login } from "@/actions/authentication/auth";
 import { useRouter } from "next/navigation";
+import { FormEvent } from "react";
 
 // const initialState: LoginInterface = { email: "", password: "" };
 
@@ -15,7 +16,8 @@ export default function Login() {
   // const [state, action, isPending] = useActionState(login, initialState);
   const router = useRouter();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
     router.push("/2fa");
   };
 
@@ -34,6 +36,7 @@ export default function Login() {
         </div>
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
+        
         <form
           onSubmit={handleSubmit}
           className="w-[90%] flex justify-center flex-col mx-auto"
