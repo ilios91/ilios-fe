@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TwoFactorAuth() {
   return (
-    <div className="w-[420px] max-h-[481px] border rounded-[20px] bg-[#EDF3FC] shadow-lg">
+    <div className="w-full max-h-[481px] ">
       {/* Logo */}
 
       {/* Content inside the box */}
