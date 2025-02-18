@@ -3,22 +3,26 @@
 import AuthLogo from "@/components/auth/AuthLogo";
 import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { LoginInterface } from "@/actions/authentication/auth.types";
 import Button from "@/components/common/buttons/Button";
 import SignupImage from "@/components/icons/SignupImage";
 import { login } from "@/actions/authentication/auth";
-// import { Modal } from "@/components/ui/modals/Modal";
+import { useRouter } from "next/navigation";
 
 const initialState: LoginInterface = { email: "", password: "" };
 
 export default function Login() {
-  // const [openModal, setOpenModal] = useState(true);
   const [state, action, isPending] = useActionState(login, initialState);
+  const router = useRouter();
 
-  // const handleOpenChange = () => {
-  //   setOpenModal(true);
-  // };
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const result = await action();
+    if (result.success) {
+      router.push("/auth/2fa");
+    }
+  };
 
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
@@ -36,7 +40,7 @@ export default function Login() {
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
         <form
-          action={action}
+          onSubmit={handleLogin}
           className="w-[90%] flex justify-center flex-col mx-auto"
         >
           <h4 className="text-2xl text-black text-center leading-[39px] font-bold mb-6">
@@ -106,8 +110,6 @@ export default function Login() {
           </div>
         </form>
       </div>
-
-      {/* <Modal openModal={openModal}/> */}
     </main>
   );
 }

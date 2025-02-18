@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { usePathname } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Ilios",
@@ -7,11 +8,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const pathname = usePathname();
+  const is2FAModal = pathname === "/auth/2fa";
+
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <>
+      {children}
+      {is2FAModal && <TwoFactorAuth />}
+    </>
   );
 }
