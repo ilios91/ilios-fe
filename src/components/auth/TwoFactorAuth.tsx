@@ -6,7 +6,7 @@ export default function TwoFactorAuth() {
       {/* Logo */}
 
       {/* Content inside the box */}
-      <h2 className="mt-12 text-2xl text-blue-normal font-medium text-center">
+      <h2 className=" text-2xl text-blue-normal font-medium text-center">
         Two-Factor Authentication
       </h2>
       <p className="text-center mt-1.5 text-xs text-[#171717] max-w-[320px] mx-auto">

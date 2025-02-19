@@ -5,10 +5,12 @@ import FormGroup from "@/components/common/input/FormGroup";
 import Link from "next/link";
 // import { useActionState } from "react";
 // import { LoginInterface } from "@/actions/authentication/auth.types";
-import SignupImage from "@/components/icons/SignupImage";
 // import { login } from "@/actions/authentication/auth";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
+
+import image from "@/assets/icons/signup.svg";
+import Image from "next/image";
 
 // const initialState: LoginInterface = { email: "", password: "" };
 
@@ -27,16 +29,15 @@ export default function Login() {
         {/* Image Container */}
         <div className="flex flex-col h-full w-[90%] mx-auto py-4 gap-y-3.5">
           <AuthLogo />
-          <h2 className="text-[#FAFAFA] text-3xl text-center font-bold leading-[43px] w-[60%] mx-auto">
+          <h2 className="text-[#FAFAFA] text-2xl text-center font-bold leading-[33px] max-w-[319px] mx-auto">
             {"Let's Get you started with Ilios"}
           </h2>
           <div className="relative flex-1 flex w-full h-[430px]">
-            <SignupImage className="w-full h-full object-cover" />
+            <Image className="object-contain" fill src={image} alt="reset password image" />
           </div>
         </div>
       </div>
       <div className="bg-blue-light w-1/2 h-full my-auto flex">
-        
         <form
           onSubmit={handleSubmit}
           className="w-[90%] flex justify-center flex-col mx-auto"
@@ -84,7 +85,12 @@ export default function Login() {
               </Link>
             </div>
 
-            <button type="submit" className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal">Log in</button>
+            <button
+              type="submit"
+              className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal"
+            >
+              Log in
+            </button>
 
             <p className="text-black text-xs max-w-[496px] text-center mx-auto mt-6">
               Two-Factor Authentication is enabled for this account. After
