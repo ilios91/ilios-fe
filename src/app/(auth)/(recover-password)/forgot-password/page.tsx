@@ -11,7 +11,7 @@ export default function ForgotPassword() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    router.push("/forgot-password-notification");
+    router.push("/email-confirmation");
   };
 
   return (
