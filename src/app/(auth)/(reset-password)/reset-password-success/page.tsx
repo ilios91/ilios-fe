@@ -1,7 +1,7 @@
+import ResetPasswordSuccess from "@/components/auth/ResetPasswordSuccess";
 import Logo from "@/components/icons/Logo";
-import ForgotPasswordNotification from "../../../components/auth/ForgotPasswordNotification";
 
-export default function ForgotPasswordNotificationPage() {
+export default function ResetPasswordSuccessPage() {
   return (
     <div className="fixed inset-0 flex items-center justify-center">
       <div className="p-6 w-[625px] flex flex-col border rounded-[20px] bg-[#EDF3FC] shadow-lg">
@@ -13,7 +13,7 @@ export default function ForgotPasswordNotificationPage() {
             </p>
           </div>
         </div>
-        <ForgotPasswordNotification />
+        <ResetPasswordSuccess />
       </div>
     </div>
   );

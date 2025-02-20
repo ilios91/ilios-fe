@@ -3,12 +3,12 @@
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 
-export default function ForgotPasswordNotification() {
+export default function EmailConfirmation() {
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    router.push("/otp");
+    router.push("/verify-otp");
   };
 
   return (
