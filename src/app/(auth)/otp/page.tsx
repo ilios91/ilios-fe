@@ -1,7 +1,7 @@
-import TwoFactorAuth from "@/components/auth/TwoFactorAuth";
 import Logo from "@/components/icons/Logo";
+import OTP from "@/components/auth/OTP";
 
-export default function TwoFactorAuthPage() {
+export default function OTPPage() {
   return (
     <div className="fixed inset-0 flex items-center justify-center">
       <div className="p-6 w-[625px] flex flex-col border rounded-[20px] bg-[#EDF3FC] shadow-lg">
@@ -13,7 +13,7 @@ export default function TwoFactorAuthPage() {
             </p>
           </div>
         </div>
-        <TwoFactorAuth />
+        <OTP />
       </div>
     </div>
   );

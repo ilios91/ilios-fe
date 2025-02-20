@@ -79,7 +79,7 @@ export default function Login() {
               />
               <Link
                 className="text-xs underline decoration-black decoration-solid decoration-1"
-                href="/"
+                href="/forgot-password"
               >
                 Forgot Password
               </Link>
