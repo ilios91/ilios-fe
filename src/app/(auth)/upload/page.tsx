@@ -2,7 +2,7 @@
 
 import UploadIcon from '../../../components/icons/UploadFile';
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { CheckCircle2, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { UploadError } from '@/utils/types';
 import { validateFile } from '@/utils/Functions';
@@ -29,6 +29,8 @@ export default function UploadFile() {
     setTitle(e.target.value);
     setError(null);
   };
+
+  console.log(error, isSuccess);
 
   const uploadLicense = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
