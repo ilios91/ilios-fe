@@ -1,36 +1,14 @@
-return (
-    <div className="h-[100vh] max-h-[100vh] w-full bg-white flex items-center justify-center">
-      <div className="max-w-[518px] w-[518px] max-h-[664px] bg-[#EDF3FC] border-[1px] rounded-lg">
-        <header className="mt-8 border-b-[1px] border-[#BABABA] pb-2"> 
-          <h2 className="font-bold text-[28px] w-[80%] mx-auto">Add Document</h2>
-        </header>
 
-        <div className="w-[80%] mt-9 mx-auto">
-          <form onSubmit={handleSubmit }>
-            <label htmlFor="title" className="font-medium text-sm text-[#171717]">Title</label>
-            <input onChange={handleTitleChange} className="h-10 w-full border-none outline-none px-2 text-xs" type="text" placeholder="PCN license" />
+There is a (auth) group containing the register,  login and 2fa page, forgot-password
+The user will enter the 2fa code on the login page after logging.
 
-            <label htmlFor='license' className="cursor-pointer flex flex-col items-center justify-center mt-12 w-full h-[200px] border-[#BABABA] border-2 border-dotted text-xs text-center">
-              <UploadIcon size="lg" />
-              <p className='flex flex-col gap-y-1 mt-6'>
-                <span>Drag and Drop here</span>
-                <span>or</span>
-                <span className='text-blue-normal'>
-                  Browse file
-                  <input onChange={uploadLicense} name='license' accept=".doc,.pdf,.docx" className='hidden cursor-pointer' id='license' type="file" />
-                </span>
-              </p>
-            </label>
+I want the 2fa page to be a modal.
 
-            <p className="mt-2 text-xs text-[#6E6E6E]">Accepted file type:- Doc or Pdf</p>
-            <button className='w-full h-10 rounded-lg my-10 bg-blue-normal text-white text-sm font-bold' disabled={false}>Upload</button>
+On forgot password page, a notification page will pop up saying notification has been sent to email. 
 
-            {/* <Button className='w-full h-10 rounded-lg my-10 bg-blue-normal text-white text-sm font-bold' text='Upload' disabled={false}/> */}
-          </form>
-        </div>
-      </div>
-    </div>
-  );
+
+create this modal using parallel and intercepting routes in nextJS 15.
+
 
 
 src/
