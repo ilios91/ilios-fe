@@ -1,4 +1,4 @@
-import { OnboardingCardProps } from "./auh.types";
+import { OnboardingCardProps } from "./types/auh.types";
 
 export default function OnboardingCard({
   text,

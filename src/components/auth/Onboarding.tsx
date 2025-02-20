@@ -5,7 +5,7 @@ import SupplierIcon from "../icons/SupplierIcon";
 import Button from "../common/buttons/Button";
 import OnboardingCard from "./OnboardingCard";
 import AuthLogo from "./AuthLogo";
-import { Role } from "./auh.types";
+import { Role } from "./types/auh.types";
 import { ReactNode, useState } from "react";
 import { useRouter } from "next/navigation";
 
