@@ -4,7 +4,7 @@ import FormGroup from "@/components/common/input/FormGroup";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 import image from "@/assets/icons/reset-password.svg";
-import AuthImagePanel from "../../../components/auth/AuthImagePanel";
+import AuthImagePanel from "@/components/auth/AuthImagePanel";
 
 export default function ForgotPassword() {
   const router = useRouter();
@@ -17,7 +17,11 @@ export default function ForgotPassword() {
   return (
     <main className="h-[100vh] w-full flex bg-blue-light">
       {/* Auth Hero Panel */}
-      <AuthImagePanel title="Reset Password to regain access" image={image}  imageAlt="reset password"/>
+      <AuthImagePanel
+        title="Reset Password to regain access"
+        image={image}
+        imageAlt="reset password"
+      />
 
       {/* Form */}
       <div className="bg-blue-light w-1/2 h-full my-auto flex">

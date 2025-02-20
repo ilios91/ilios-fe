@@ -4,7 +4,7 @@ import FormGroup from "@/components/common/input/FormGroup";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 import image from "@/assets/icons/reset-password.svg";
-import AuthImagePanel from "../../../components/auth/AuthImagePanel";
+import AuthImagePanel from "@/components/auth/AuthImagePanel";
 
 export default function CreateNewPasswordPage() {
   const router = useRouter();
