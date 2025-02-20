@@ -102,7 +102,7 @@ export default function FacilitySignup() {
             />
             <Button
               disabled={isPending}
-              className="mt-8 text-sm w-[518px] h-10 rounded-lg text-white bg-blue-normal"
+              className="mt-8 text-sm w-full h-10 rounded-lg text-white bg-blue-normal"
               text={isPending ? "Loading..." : "Sign Up"}
             />
           </div>
