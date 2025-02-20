@@ -12,9 +12,9 @@ export default function VerifyOTP() {
     router.push("/reset-password");
   };
 
-  // const resendOtp = () => {
-  //   router.push("");
-  // };
+  const resendOtp = () => {
+    router.push("");
+  };
 
   return (
     <div className="w-full max-h-[481px] mt-10 my-16">
@@ -41,13 +41,13 @@ export default function VerifyOTP() {
           required
           value={otp}
         />
-        {/* <button
+        <button
           onClick={resendOtp}
           type="button"
           className="text-blue-normal font-bold text-xs w-auto rounded-lg text-center mx-auto my-6"
         >
           Resend
-        </button> */}
+        </button>
         <button
           type="submit"
           className="h-10 text-white font-bold bg-blue-normal text-xs w-full rounded-lg p-2.5 text-center mx-auto"
