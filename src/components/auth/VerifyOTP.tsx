@@ -3,13 +3,13 @@
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
-export default function OTP() {
+export default function VerifyOTP() {
   const [otp, setOtp] = useState("");
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    router.push("/create-new-password");
+    router.push("/reset-password");
   };
 
   const resendOtp = () => {

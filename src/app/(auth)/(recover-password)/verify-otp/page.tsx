@@ -1,7 +1,7 @@
 import Logo from "@/components/icons/Logo";
-import OTP from "@/components/auth/OTP";
+import VerifyOTP from "@/components/auth/VerifyOTP";
 
-export default function OTPPage() {
+export default function VerifyOTPPage() {
   return (
     <div className="fixed inset-0 flex items-center justify-center">
       <div className="p-6 w-[625px] flex flex-col border rounded-[20px] bg-[#EDF3FC] shadow-lg">
@@ -13,7 +13,7 @@ export default function OTPPage() {
             </p>
           </div>
         </div>
-        <OTP />
+        <VerifyOTP />
       </div>
     </div>
   );

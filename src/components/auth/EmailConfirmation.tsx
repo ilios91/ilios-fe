@@ -8,7 +8,7 @@ export default function EmailConfirmation() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    router.push("/otp");
+    router.push("/verify-otp");
   };
 
   return (

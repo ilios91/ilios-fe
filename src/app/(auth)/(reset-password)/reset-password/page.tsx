@@ -6,7 +6,7 @@ import { FormEvent } from "react";
 import image from "@/assets/icons/reset-password.svg";
 import AuthImagePanel from "@/components/auth/AuthImagePanel";
 
-export default function CreateNewPasswordPage() {
+export default function ResetPasswordPage() {
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent) => {
