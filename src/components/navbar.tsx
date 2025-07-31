@@ -2,14 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../assets/logo.svg";
+import Logo from "@/public/icons/logo.svg";
 import { useState } from "react";
-
-const links = [
-  { id: "about", label: "About us" },
-  { id: "service", label: "Our Services" },
-  { id: "contact", label: "Contact us" },
-]
+import { MENU_ITEMS } from "@/utils/menu-items";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +17,7 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  }
+  const toggleMenu = () => { setIsMenuOpen(!isMenuOpen) }
 
   return (
     <header className={`fixed h-[90px] w-[100vw] md:w-full top-0 z-50 bg-white`}>
@@ -62,7 +55,7 @@ export default function Navbar() {
           >
           <div className="flex flex-col md:flex-row items-start md:items-center h-full pl-8 md:mt-[90px] pt-4 md:pt-0 md:pl-0">
             <ul className="w-[90%] flex flex-col md:flex-row md:gap-y-0 md:gap-x-12 md:w-full">
-              { links.map((link) => (
+              { MENU_ITEMS.map((link) => (
                 <li
                   // id={link.id}
                   key={link.id} 
