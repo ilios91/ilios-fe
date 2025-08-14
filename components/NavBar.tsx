@@ -6,16 +6,18 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 
 const navItems = [
-  { label: 'About us', href: '#about' },
-  { label: 'Our Service', href: '#services' },
-  { label: 'Contact us', href: '#contact' },
+  { label: 'ABOUT US', href: '#about' },
+  { label: 'OUR SERVICES', href: '#services' },
+  { label: 'CONSTACT US', href: '#contact' },
+  { label: 'FAQ', href: '#faq' },
 ]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="w-full px-6 md:px-12 py-4 shadow-sm bg-white fixed z-50 backdrop-blur-md bg-white/80 supports-[backdrop-filter]:bg-white/60 border-b border-gray-200/20 transition-all duration-300">
+    <header className="w-full px-6 md:px-12 py-4 shadow-sm bg-white fixed z-50 backdrop-blur-md border-b border-gray-200/20 transition-all duration-300"
+    style={{ fontFamily: "var(--font-sfpro)" }}>
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
@@ -82,7 +84,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-blue-600"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-blue-600 text-center"
             >
               {item.label}
             </a>
