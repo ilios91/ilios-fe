@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function HeroSection(): JSX.Element {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden pt-28 sm:pt-32"
+      className="relative w-full flex items-center justify-center text-center overflow-hidden pt-24 sm:pt-28 pb-20 sm:pb-28"
       style={{ fontFamily: "var(--font-sfpro)" }}
     >
       {/* Background Image */}
@@ -17,7 +17,7 @@ export default function HeroSection(): JSX.Element {
           alt="Delivery background"
           fill
           priority
-          className="object-cover scale-105 animate-slow-zoom"
+          className="object-cover animate-slow-zoom"
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
@@ -28,12 +28,12 @@ export default function HeroSection(): JSX.Element {
       <div className="absolute bottom-32 right-20 w-16 h-16 bg-purple-500/20 rounded-full blur-2xl animate-float" />
 
       {/* Content */}
-      <div className="relative z-10 px-4 max-w-4xl text-center">
+      <div className="relative z-10 px-4 max-w-3xl text-center pt-10">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-white text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-lg"
+          className="text-white text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow-lg"
         >
           Simplifying{" "}
           <span className="text-blue-400">Healthcare Procurement</span> for
@@ -44,7 +44,7 @@ export default function HeroSection(): JSX.Element {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-gray-200 mt-6 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto"
+          className="text-gray-200 mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
         >
           Find reliable suppliers, place orders, and ensure delivery with trusted
           logistics partners.
@@ -57,7 +57,7 @@ export default function HeroSection(): JSX.Element {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10 flex justify-center"
         >
-          <button className="group relative inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <button className="group relative inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden">
             <span className="relative z-10">Get Started</span>
             <div className="absolute inset-0 bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out rounded-full z-0" />
             <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
