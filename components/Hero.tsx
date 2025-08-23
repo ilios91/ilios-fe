@@ -1,110 +1,80 @@
 "use client";
 
-import Image from "next/image";
-import { JSX } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function HeroSection(): JSX.Element {
+export default function HeroSection() {
   return (
     <section
-      className="relative w-full flex items-center justify-center text-center overflow-hidden pt-24 sm:pt-28 pb-20 sm:pb-28"
+      id="home"
+      className="relative w-full flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-16 md:pb-32 bg-gradient-to-b from-white to-blue-50"
       style={{ fontFamily: "var(--font-sfpro)" }}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/hero-bg.png"
-          alt="Delivery background"
-          fill
-          priority
-          className="object-cover animate-slow-zoom"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
+      {/* Background subtle graphic */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-40" />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-3xl animate-float-slow" />
-      <div className="absolute bottom-32 right-20 w-16 h-16 bg-purple-500/20 rounded-full blur-2xl animate-float" />
-
       {/* Content */}
-      <div className="relative z-10 px-4 max-w-3xl text-center pt-10">
-        <motion.h1
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-6 md:px-12">
+        {/* Text Content */}
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-white text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow-lg"
+          className="flex-1 text-center md:text-left space-y-4 sm:space-y-6 md:space-y-8 py-6 md:py-0"
         >
-          Simplifying{" "}
-          <span className="text-blue-400">Healthcare Procurement</span> for
-          Facilities and Suppliers
-        </motion.h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-snug">
+            Simplifying{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+              Healthcare Procurement
+            </span>{" "}
+            for Facilities & Suppliers
+          </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-gray-200 mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
-        >
-          Find reliable suppliers, place orders, and ensure delivery with trusted
-          logistics partners.
-        </motion.p>
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed px-2 sm:px-0">
+            ILIOS connects healthcare providers with trusted suppliers, enabling
+            seamless procurement, transparent pricing, and reliable delivery.
+          </p>
 
-        {/* Button */}
+          {/* CTA buttons */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+            <Link
+              href="/role-selection"
+              className="relative overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl hover:scale-105"
+            >
+              Get Started
+            </Link>
+
+            <a
+              href="#how"
+              className="rounded-full border border-blue-600 px-6 py-3 text-sm sm:text-base font-semibold text-blue-600 hover:bg-blue-50 transition-colors"
+            >
+              Learn More
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Hero Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-10 flex justify-center"
+          transition={{ duration: 0.9, delay: 0.3 }}
+          className="flex-1 relative w-full max-w-md md:max-w-lg"
         >
-          <button className="group relative inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden">
-            <span className="relative z-10">Get Started</span>
-            <div className="absolute inset-0 bg-blue-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out rounded-full z-0" />
-            <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-              Let&apos;s Begin
-            </span>
-          </button>
+          <div className="relative w-full h-[260px] sm:h-[380px] md:h-[460px] lg:h-[500px]">
+            <Image
+              src="/ILIOS.png"
+              alt="Healthcare procurement illustration"
+              fill
+              priority
+              className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+            />
+          </div>
         </motion.div>
       </div>
-
-      {/* Tailwind animations */}
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-15px);
-          }
-        }
-        @keyframes float-slow {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        @keyframes slow-zoom {
-          0% {
-            transform: scale(1);
-          }
-          100% {
-            transform: scale(1.05);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-float-slow {
-          animation: float-slow 10s ease-in-out infinite;
-        }
-        .animate-slow-zoom {
-          animation: slow-zoom 20s ease-in-out infinite alternate;
-        }
-      `}</style>
     </section>
   );
 }
