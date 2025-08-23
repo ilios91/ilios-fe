@@ -6,18 +6,22 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 
 const navItems = [
-  { label: 'About us', href: '#about' },
-  { label: 'Our Service', href: '#services' },
-  { label: 'Contact us', href: '#contact' },
+  { label: 'HOME', href: '#home' },
+  { label: 'MARKETPLACE', href: '#marketplace' },
+  { label: 'HOW IT WORKS', href: '#how-it-works' },
+  { label: 'CONTACT US', href: '#contact' },
+  { label: 'FAQ', href: '#faq' },
 ]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="w-full px-6 md:px-12 py-4 shadow-sm bg-white fixed z-50 backdrop-blur-md bg-white/80 supports-[backdrop-filter]:bg-white/60 border-b border-gray-200/20 transition-all duration-300">
+    <header
+      className="w-full px-6 md:px-12 py-4 shadow-sm bg-white fixed z-50 backdrop-blur-md border-b border-gray-200/20 transition-all duration-300 top-0 left-0 right-0"
+      style={{ fontFamily: 'var(--font-sfpro)' }}
+    >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 relative group">
           <div className="relative h-10 w-10">
@@ -52,7 +56,7 @@ export default function Header() {
         {/* CTA Button */}
         <div className="hidden md:block">
           <Link
-            href="#get-started"
+            href="/role-selection"
             className="relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             <span className="relative z-10">Get Started</span>
@@ -70,13 +74,22 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile Nav */}
+      {/* Mobile Drawer */}
       <div
-        className={`md:hidden border-t border-gray-200/20 bg-white/95 backdrop-blur-sm overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-40 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <nav className="flex flex-col space-y-1 px-4 py-4">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+          <span className="font-bold text-lg text-gray-800">Menu</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="rounded-lg p-2 text-gray-700 hover:bg-gray-100"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <nav className="flex flex-col space-y-1 px-4 py-4 bg-white">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -88,13 +101,22 @@ export default function Header() {
             </a>
           ))}
           <Link
-            href="#get-started"
-            className="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
+            href="/role-selection"
+            onClick={() => setIsOpen(false)}
+            className="mt-4 inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
           >
             Get Started
           </Link>
         </nav>
       </div>
+
+      {/* Overlay when drawer is open */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30" // translucent overlay
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </header>
   )
 }
