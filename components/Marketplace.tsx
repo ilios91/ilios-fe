@@ -5,22 +5,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart, Product } from "../context/CartContext";
 
-interface Product {
-  id: number;
-  name: string;
-  supplier: string;
-  price: string;
-  image: string;
-  category: string;
-}
-
-const mockProducts: Product[] = [
+const baseProducts: Product[] = [
   {
     id: 1,
     name: "Surgical Masks (50pcs)",
     supplier: "MedSupply Co.",
-    price: "₦25,000",
+    price: 25000,
     image: "/mask.png",
     category: "PPE",
   },
@@ -28,7 +20,7 @@ const mockProducts: Product[] = [
     id: 2,
     name: "Digital Thermometer",
     supplier: "HealthEquip",
-    price: "₦15,500",
+    price: 15500,
     image: "/thermo.jpg",
     category: "Equipment",
   },
@@ -36,7 +28,7 @@ const mockProducts: Product[] = [
     id: 3,
     name: "Gloves (100pcs)",
     supplier: "SafeHands Ltd.",
-    price: "₦30,000",
+    price: 30000,
     image: "/gloves.png",
     category: "PPE",
   },
@@ -44,7 +36,7 @@ const mockProducts: Product[] = [
     id: 4,
     name: "Stethoscope",
     supplier: "Meditech",
-    price: "₦45,000",
+    price: 45000,
     image: "/steth.png",
     category: "Equipment",
   },
@@ -52,10 +44,21 @@ const mockProducts: Product[] = [
     id: 5,
     name: "IV Drip Set",
     supplier: "CarePlus",
-    price: "₦20,000",
+    price: 20000,
     image: "/ivset.png",
     category: "Consumables",
   },
+];
+
+// 🔄 Mirror the products so marketplace looks full
+const mockProducts: Product[] = [
+  ...baseProducts,
+  ...baseProducts.map((p, i) => ({
+    ...p,
+    id: p.id + baseProducts.length,
+    name: `${p.name} (Alt)`,
+    supplier: `${p.supplier} Intl.`,
+  })),
 ];
 
 const categories = ["All", "PPE", "Equipment", "Consumables"];
@@ -63,6 +66,7 @@ const categories = ["All", "PPE", "Equipment", "Consumables"];
 export default function Marketplace() {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const { addToCart } = useCart();
 
   const filteredProducts = mockProducts.filter((p) => {
     const matchesCategory =
@@ -80,13 +84,15 @@ export default function Marketplace() {
       style={{ fontFamily: "var(--font-sfpro)" }}
     >
       {/* Header */}
-      <div className="max-w-7xl mx-auto text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-          Marketplace
-        </h1>
-        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-          Browse and connect with verified suppliers for your healthcare needs.
-        </p>
+      <div className="max-w-7xl mx-auto flex justify-between items-center mb-10">
+        <div className="text-center w-full">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+            Marketplace
+          </h1>
+          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+            Browse and connect with verified suppliers for your healthcare needs.
+          </p>
+        </div>
       </div>
 
       {/* Search + Category Pills */}
@@ -141,7 +147,7 @@ export default function Marketplace() {
               transition={{ duration: 0.4 }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition"
             >
-              <div className="relative w-full h-50">
+              <div className="relative w-full h-48">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -157,8 +163,11 @@ export default function Marketplace() {
                 <p className="text-lg font-bold text-blue-600 mt-2">
                   {product.price}
                 </p>
-                <Button className="w-full mt-4 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
-                  Request Quote
+                <Button
+                  onClick={() => addToCart(product)}
+                  className="w-full mt-4 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+                >
+                  Add to Cart
                 </Button>
               </div>
             </motion.div>
