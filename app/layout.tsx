@@ -47,7 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${sfPro.variable} antialiased`}
       >
         <CartProvider>
-          <main className="pt-[64px]">{children}</main>
+          {children}
         </CartProvider>
       </body>
     </html>
