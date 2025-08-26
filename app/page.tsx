@@ -8,13 +8,20 @@ import Header from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div className="pt-16">
+    <div className="flex flex-col min-h-screen">
+      {/* Sticky Header */}
       <Header />
-      <HeroSection />
-      <Marketplace />
-      <HowItWorks />
-      <ContactUs />
-      <FAQSection />
+
+      {/* Page Content */}
+      <main className="flex-1">
+        <HeroSection />
+        <Marketplace />
+        <HowItWorks />
+        <ContactUs />
+        <FAQSection />
+      </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
