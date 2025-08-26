@@ -8,7 +8,7 @@ import Header from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="pt-16">
       <Header />
       <HeroSection />
       <Marketplace />

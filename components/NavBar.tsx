@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import Image from "next/image";
-import { useCart } from "@/context/CartContext"; // ✅ import context
+import { useCart } from "@/context/CartContext";
 
 const navItems = [
   { label: "HOME", href: "#home" },
@@ -16,13 +16,12 @@ const navItems = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { cart } = useCart(); // ✅ get cart from context
+  const { cart } = useCart();
 
   return (
     <>
       <header
-        className="w-full px-6 md:px-12 py-4 shadow-sm bg-white fixed z-50 backdrop-blur-md border-b border-gray-200/20 top-0 left-0 right-0"
-        style={{ fontFamily: "var(--font-sfpro)" }}
+        className="w-full px-6 py-4 shadow-sm bg-white fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-200/20"
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -78,7 +77,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Right Side: Cart + Toggle */}
+          {/* Mobile Right Side */}
           <div className="md:hidden flex items-center gap-4">
             <Link
               href="/cart"
@@ -144,6 +143,9 @@ export default function Header() {
           />
         )}
       </header>
+
+      {/* 👇 Spacer so content won't hide under header */}
+      <div className="h-20" />
     </>
   );
 }
