@@ -161,7 +161,7 @@ export default function Marketplace() {
                 </h3>
                 <p className="text-sm text-gray-500">{product.supplier}</p>
                 <p className="text-lg font-bold text-blue-600 mt-2">
-                  {product.price}
+                  ₦{product.price.toLocaleString()}
                 </p>
                 <Button
                   onClick={() => addToCart(product)}
