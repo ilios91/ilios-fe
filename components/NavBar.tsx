@@ -21,7 +21,8 @@ export default function Header() {
   return (
     <>
       <header
-        className="w-full px-6 py-4 shadow-sm bg-white fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-200/20"
+         className="w-full px-6 py-4 shadow-sm bg-white fixed top-0 left-0 right-0 z-50 border-b border-gray-200/20 will-change-transform"
+         style={{ WebkitBackfaceVisibility: "hidden", backfaceVisibility: "hidden" }}
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -99,53 +100,53 @@ export default function Header() {
             </button>
           </div>
         </nav>
-
-        {/* Mobile Drawer */}
-        <div
-          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-40 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-            <span className="font-bold text-lg text-gray-800">Menu</span>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="rounded-lg p-2 text-gray-700 hover:bg-gray-100"
-            >
-              <X size={24} />
-            </button>
-          </div>
-          <nav className="flex flex-col space-y-1 px-4 py-4 bg-white">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-blue-600"
-              >
-                {item.label}
-              </a>
-            ))}
-            <Link
-              href="/role-selection"
-              onClick={() => setIsOpen(false)}
-              className="mt-4 inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
-            >
-              Get Started
-            </Link>
-          </nav>
-        </div>
-
-        {isOpen && (
-          <div
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
-            onClick={() => setIsOpen(false)}
-          />
-        )}
       </header>
 
-      {/* 👇 Spacer so content won't hide under header */}
+      {/* Spacer */}
       <div className="h-20" />
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-40 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+          <span className="font-bold text-lg text-gray-800">Menu</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="rounded-lg p-2 text-gray-700 hover:bg-gray-100"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <nav className="flex flex-col space-y-1 px-4 py-4 bg-white">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-blue-50 hover:text-blue-600"
+            >
+              {item.label}
+            </a>
+          ))}
+          <Link
+            href="/role-selection"
+            onClick={() => setIsOpen(false)}
+            className="mt-4 inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
+          >
+            Get Started
+          </Link>
+        </nav>
+      </div>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 z-30"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </>
   );
 }
