@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-16 md:pb-32 bg-gradient-to-b from-white to-blue-50"
+      className="relative w-full flex items-center justify-center overflow-hidden pt-20 pb-16 md:pb-32 bg-gradient-to-b from-white to-blue-50"
       style={{ fontFamily: "var(--font-sfpro)" }}
     >
       {/* Background subtle graphic */}

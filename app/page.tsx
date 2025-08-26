@@ -8,14 +8,21 @@ import Header from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div className="pt-16">
-      <Header />
-      <HeroSection />
-      <Marketplace />
-      <HowItWorks />
-      <ContactUs />
-      <FAQSection />
-      <Footer />
+    <div>
+      {/* Fixed Header */}
+      <div className="fixed top-0 left-0 w-full z-50">
+        <Header />
+      </div>
+
+      {/* Add top padding equal to header height so content never overlaps */}
+      <div className="pt-20">
+        <HeroSection />
+        <Marketplace />
+        <HowItWorks />
+        <ContactUs />
+        <FAQSection />
+        <Footer />
+      </div>
     </div>
   );
 }

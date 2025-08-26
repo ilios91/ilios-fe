@@ -42,6 +42,7 @@ export default function ContactUs() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-extrabold text-gray-900"
         >
@@ -59,6 +60,7 @@ export default function ContactUs() {
           onSubmit={handleSubmit}
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-xl p-8 md:p-10 space-y-6 border border-gray-100"
         >
@@ -113,6 +115,7 @@ export default function ContactUs() {
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
