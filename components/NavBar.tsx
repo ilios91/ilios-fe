@@ -43,7 +43,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex gap-10 text-sm font-semibold text-gray-800">
+          <ul className="hidden md:flex gap-5 text-xs md:text-xs lg:text-sm font-semibold text-gray-800 px-6">
             {navItems.map((item) => (
               <li key={item.href} className="relative group">
                 <a
@@ -56,6 +56,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
+
 
           {/* Right Side (Desktop): CTA + Cart */}
           <div className="hidden md:flex items-center gap-6">
