@@ -22,7 +22,9 @@ const RoleSection = ({ icon: Icon, title, desc }: { icon: any; title: string; de
 
 export default function AboutUs() {
   return (
-    <section className="bg-gradient-to-b from-white to-muted/30 py-16">
+    <section
+    id="about-us"
+     className="bg-gradient-to-b from-white to-muted/30 py-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" whileInView="show" variants={fadeIn}>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900">About Us</h2>
