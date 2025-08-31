@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import { Store, ShieldCheck, Users, PackageSearch } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import * as React from "react";
 
-
-// Fade-in variant
-const fadeIn = {
+// Fade-in variant (typed properly for TSX)
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" as const }, // ✅ fix
+  },
 };
 
 type Feature = {
