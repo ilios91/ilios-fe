@@ -79,7 +79,6 @@ export default function Marketplace() {
 
   return (
     <section
-      id="marketplace"
       className="relative w-full min-h-screen bg-gray-50 py-16 px-6 md:px-12"
       style={{ fontFamily: "var(--font-sfpro)" }}
     >

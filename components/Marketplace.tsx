@@ -30,7 +30,9 @@ const features = [
 
 export function Marketplace() {
   return (
-    <section className="py-20 bg-white">
+    <section 
+    id="marketplace"
+    className="py-20 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <motion.div
@@ -77,7 +79,7 @@ export function Marketplace() {
 
         {/* CTA Button */}
         <div className="mt-12">
-          <Link href="/marketplace" passHref>
+          <Link href="/market" passHref>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
