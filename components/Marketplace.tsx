@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Store, ShieldCheck, Users, PackageSearch } from "lucide-react";
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 // Fade-in variant
 const fadeIn = {
@@ -10,7 +11,13 @@ const fadeIn = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const features = [
+type Feature = {
+  icon: ReactNode;
+  title: string;
+  desc: string;
+};
+
+const features: Feature[] = [
   {
     icon: <PackageSearch className="h-8 w-8 text-blue-600" />,
     title: "For Buyers",
@@ -28,11 +35,9 @@ const features = [
   },
 ];
 
-export function Marketplace() {
+export default function Marketplace() {
   return (
-    <section 
-    id="marketplace"
-    className="py-20 bg-white">
+    <section id="marketplace" className="py-20 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <motion.div

@@ -1,11 +1,11 @@
-import React from 'react'
+"use cliet";
 
-const page = () => {
-  return (
-    <div>
-        <h1>Marketplace Page</h1>
+
+
+export default function page () {
+  return(
+    <div className="">
+      Market Place
     </div>
   )
 }
-
-export default page
