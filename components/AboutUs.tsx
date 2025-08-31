@@ -22,13 +22,20 @@ type RoleSectionProps = {
 };
 
 const RoleSection = ({ icon: Icon, title, desc }: RoleSectionProps) => (
-  <motion.div variants={fadeIn} className="flex gap-4 items-start">
-    <div className="shrink-0 rounded-xl p-3 shadow-sm border bg-blue-600">
-      <Icon className="h-6 w-6 text-white" />
+  <motion.div
+    variants={fadeIn}
+    className="flex items-center sm:items-start gap-4"
+  >
+    <div className="flex-shrink-0 rounded-xl p-3 shadow-sm border bg-blue-600 flex items-center justify-center">
+      <Icon className="h-6 w-6 md:h-7 md:w-7 text-white" />
     </div>
-    <div>
-      <h4 className="font-semibold text-lg text-gray-800">{title}</h4>
-      <p className="text-muted-foreground text-sm mt-1">{desc}</p>
+    <div className="flex-1">
+      <h4 className="font-semibold text-[16px] md:text-[18px] lg:text-[20px] text-gray-800">
+        {title}
+      </h4>
+      <p className="text-gray-600 text-[13px] md:text-[15px] lg:text-[16px] mt-1 leading-relaxed">
+        {desc}
+      </p>
     </div>
   </motion.div>
 );
@@ -37,26 +44,25 @@ export default function AboutUs() {
   return (
     <section
       id="about-us"
-      className="bg-gradient-to-b from-white to-muted/30 py-16"
+      className="bg-gradient-to-b from-white to-gray-50 py-16"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <motion.div initial="hidden" whileInView="show" variants={fadeIn}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900">
+          <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-bold text-center text-gray-900">
             About Us
           </h2>
-          <p className="mt-4 text-center text-muted-foreground md:text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-center text-gray-600 text-[14px] md:text-[16px] lg:text-[18px] max-w-2xl mx-auto leading-relaxed">
             <strong className="text-blue-600">Ilios</strong> connects{" "}
-            <span className="font-semibold text-foreground text-gray-900">
-              Buyers
-            </span>{" "}
-            and{" "}
-            <span className="font-semibold text-foreground">Suppliers</span> in
-            a trusted healthcare marketplace—ensuring access to essential
-            products while maintaining compliance and transparency.
+            <span className="font-semibold text-gray-900">Buyers</span> and{" "}
+            <span className="font-semibold">Suppliers</span> in a trusted
+            healthcare marketplace—ensuring access to essential products while
+            maintaining compliance and transparency.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-10">
+        {/* Role Sections */}
+        <div className="mt-12 grid md:grid-cols-2 gap-8 lg:gap-12">
           <RoleSection
             icon={Building2}
             title="For Buyers (Healthcare Facilities)"
@@ -70,7 +76,7 @@ export default function AboutUs() {
           />
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 gap-8 lg:gap-12">
           <RoleSection
             icon={ShoppingCart}
             title="Guest Shopping"
@@ -84,10 +90,11 @@ export default function AboutUs() {
           />
         </div>
 
+        {/* Footer Note */}
         <div className="mt-12 flex justify-center">
-          <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
-            <p>
+          <div className="flex flex-col items-center gap-2 text-sm text-gray-500">
+            <CheckCircle2 className="h-5 w-5 text-blue-600" />
+            <p className="text-center max-w-md">
               We exist to simplify healthcare procurement while keeping
               compliance and trust at the core.
             </p>
