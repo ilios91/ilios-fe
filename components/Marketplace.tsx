@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { Store, ShieldCheck, Users, PackageSearch } from "lucide-react";
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import * as React from "react";
+
 
 // Fade-in variant
 const fadeIn = {
@@ -12,7 +13,7 @@ const fadeIn = {
 };
 
 type Feature = {
-  icon: ReactNode;
+  icon: React.ReactNode;
   title: string;
   desc: string;
 };
