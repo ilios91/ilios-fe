@@ -1,9 +1,10 @@
+import AboutUs from "@/components/AboutUs";
 import ContactUs from "@/components/ContactUs";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
-import Marketplace from "@/components/Marketplace";
+import { Marketplace } from "@/components/Marketplace";
 import Header from "@/components/NavBar";
 
 export default function Home() {
@@ -17,10 +18,11 @@ export default function Home() {
       {/* Add top padding equal to header height so content never overlaps */}
       <div className="pt-20">
         <HeroSection />
+        <AboutUs />
         <Marketplace />
         <HowItWorks />
-        <ContactUs />
         <FAQSection />
+        <ContactUs />
         <Footer />
       </div>
     </div>
