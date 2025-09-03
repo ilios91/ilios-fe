@@ -41,7 +41,12 @@ const features: Feature[] = [
 
 export default function Marketplace() {
   return (
-    <section id="marketplace" className="py-20 bg-white">
+    <section id="marketplace" className="py-20 bg-gradient-to-b from-white to-blue-50">
+      {/* Background subtle graphic */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-40" />
+      </div>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <motion.div
