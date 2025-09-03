@@ -11,7 +11,7 @@ export default function Home() {
     <div>
 
       {/* Add top padding equal to header height so content never overlaps */}
-      <div className="pt-20">
+      <div className="">
         <HeroSection />
         <AboutUs />
         <Marketplace />
