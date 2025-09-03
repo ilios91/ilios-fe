@@ -9,9 +9,6 @@ import Marketplace from "@/components/Marketplace";
 export default function Home() {
   return (
     <div>
-
-      {/* Add top padding equal to header height so content never overlaps */}
-      <div className="">
         <HeroSection />
         <AboutUs />
         <Marketplace />
@@ -19,7 +16,6 @@ export default function Home() {
         <FAQSection />
         <ContactUs />
         <Footer />
-      </div>
     </div>
   );
 }
