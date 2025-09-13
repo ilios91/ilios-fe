@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Menu, Users, Store, BarChart2, Settings, Bell } from "lucide-react";
 
 export default function AdminDashboard() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
@@ -74,7 +74,14 @@ export default function AdminDashboard() {
   );
 }
 
-function NavItem({ icon, label, open }: any) {
+// NavItem props typing
+interface NavItemProps {
+  icon: ReactNode;
+  label: string;
+  open: boolean;
+}
+
+function NavItem({ icon, label, open }: NavItemProps) {
   return (
     <div
       className="flex items-center gap-3 p-3 hover:bg-blue-100 cursor-pointer rounded-lg transition-all"
@@ -86,7 +93,14 @@ function NavItem({ icon, label, open }: any) {
   );
 }
 
-function Panel({ title, gradient, children }: any) {
+// Panel props typing
+interface PanelProps {
+  title: string;
+  gradient: string;
+  children: ReactNode;
+}
+
+function Panel({ title, gradient, children }: PanelProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
